@@ -4,7 +4,8 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var index = require('./routes/index');
+var index = require('./routes/index.js');
+var classPage = require('./routes/classPage.js')
 
 app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
 app.get('/', index.view);
+app.get('/class/:id/:title', classPage.view)
 
 
 // server start

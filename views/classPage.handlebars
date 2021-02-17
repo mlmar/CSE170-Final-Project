@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> {{title}} </title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/classPage.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <div class="class-page">
+        <label class="title"> {{title}} </label>
+
+        <div class="posts-list">
+          {{#each posts}}
+            <a class="item"> 
+              <span class="header">
+                <span class="icon"></span>
+                <label class="name"> {{name}} </label>
+              </span>
+              <p class="text"> {{text}} </p>
+              <span class="footer">
+                <button> + </button>
+                <button> - </button>
+                <button> Comment </button>
+              </span>
+            </a>
+          {{/each}}
+          <button> post </button>
+        </div>
+
+
+        <nav>
+          <button> home </button>
+          <button> groups </button>
+        </nav>
+
+      </div>
+    </main>
+  </body>
+</html>

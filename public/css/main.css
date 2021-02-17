@@ -1,0 +1,122 @@
+/* defaults */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  transition: 
+    background .5s ease,
+    color .5s ease,
+    padding .5s ease,
+    margin .5s ease,
+    height .5s ease;
+}
+
+html, body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+button {
+  outline: none;
+  border: none;
+}
+
+button:focus{ 
+  outline: none;
+}
+
+a[href] {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* wrap every page with <main> tag */
+
+main {
+  display: flex;
+  flex: 1 1;
+  flex-direction: colomn;
+}
+
+
+/* homepage */
+
+.homepage {
+  position: relative;
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  padding: 4rem 0 0;
+}
+
+.homepage > .title {
+  font-weight: bold;
+  font-size: 2.7rem;
+  padding: 2rem;
+}
+
+.homepage > .class-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.homepage > .class-list > .item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  padding: 1rem 3rem;
+  font-weight: bold;
+}
+
+.homepage > .class-list > .item > .icon {
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  background: lightgray;
+  border-radius: 1.3rem;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+}
+
+.homepage > .class-list > .item > label {
+  font-size: 1.5rem;
+}
+
+.homepage > .join-btn {
+  position: absolute;
+  bottom: 2rem;
+  width: 10rem;
+  height: 3rem;
+  align-self: center;
+  background: lightgray;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* class page */
+
+.class-page {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.class-page > .posts-list {
+
+}
+
+.class-page > .posts-list > .item {
+  
+}

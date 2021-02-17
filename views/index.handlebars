@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <title> Disquiz (temporary) </title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/index.js"></script>
   </head>
+
   <body>
-    
+    <main>
+      <div class="homepage">
+        <label class="title"> Your Classes </label>
+
+        <div class="class-list">
+          {{#each classes}}
+            <a class="item" href="class/{{url}}/{{title}}"> 
+              <span class="icon"> {{number}} </span>
+              <label> {{title}} </label>
+            </a>
+          {{/each}}
+        </div>
+
+        <button class="join-btn"> Join a class </button>
+
+      </div>
+    </main>
   </body>
 </html>
