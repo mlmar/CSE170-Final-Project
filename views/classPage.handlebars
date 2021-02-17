@@ -12,9 +12,12 @@
   <body>
     <main>
       <div class="class-page">
-        <label class="title"> {{title}} </label>
-
+        <nav>
+          <a class="back-btn icon" href="/"> </a>
+          <label class="title"> {{title}} </label>
+        </nav>
         <div class="posts-list">
+          
           {{#each posts}}
             <a class="item"> 
               <span class="header">
@@ -22,22 +25,21 @@
                 <label class="name"> {{name}} </label>
               </span>
               <p class="text"> {{text}} </p>
-              <span class="footer">
-                <button> + </button>
-                <button> - </button>
-                <button> Comment </button>
+              <br/>
+              <span class="button-panel">
+                <span class="up-btn icon"> </span>
+                <span class="comment"> <span class="comment-btn icon"> </span> <label> Comment </label> </span>
               </span>
             </a>
           {{/each}}
-          <button> post </button>
+          
+          <button class="post-btn"> </button>
         </div>
 
-
-        <nav>
-          <button> home </button>
-          <button> groups </button>
-        </nav>
-
+        <footer>
+          <a href="/class/{{url}}"> <span class="home-btn icon" > </span> </a>
+          <a href="/class/{{url}}/groups"> <span class="group-btn icon" > </span> </a>
+        </foopter>
       </div>
     </main>
   </body>

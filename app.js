@@ -21,7 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
 app.get('/', index.view);
-app.get('/class/:id/:title', classPage.view)
+app.get('/class/:id/', classPage.view)
+app.get('/class/:id/:page', classPage.view)
 
 
 // server start

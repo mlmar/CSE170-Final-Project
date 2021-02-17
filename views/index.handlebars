@@ -12,11 +12,13 @@
   <body>
     <main>
       <div class="homepage">
-        <label class="title"> Your Classes </label>
+        <nav>
+          <label class="title"> Your Classes </label>
+        </nav>
 
         <div class="class-list">
           {{#each classes}}
-            <a class="item" href="class/{{url}}/{{title}}"> 
+            <a class="item" href="class/{{url}}"> 
               <span class="icon"> {{number}} </span>
               <label> {{title}} </label>
             </a>
