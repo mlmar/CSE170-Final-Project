@@ -156,7 +156,7 @@ main {
 
 .homepage > main,
 .classpage > main {
-  padding-top: 10rem;
+  padding-top: 10rem !important;
 }
 
 /* navbar */
@@ -171,8 +171,13 @@ nav {
 nav > * {
   display: flex;
   flex-basis: 50%;
+  align-items: center;
   justify-content: center;
-  background-size: 15% !important;
+}
+
+nav > * > * {
+  height: 2rem;
+  width: 2rem;
 }
 
 

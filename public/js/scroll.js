@@ -3,7 +3,7 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-  // $("main").on("scroll", handleScroll);
+  $("main").on("scroll", handleScroll);
 }
 
 function handleScroll() {
