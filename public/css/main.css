@@ -122,6 +122,9 @@ nav > .back-btn {
   height: fit-content;
   padding: 1rem 3rem;
   font-weight: bold;
+}
+
+.homepage > .class-list > .item * {
   cursor: pointer;
 }
 
