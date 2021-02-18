@@ -101,9 +101,11 @@ a[href] {
   flex-direction: column;
   height: 10rem;
   padding: 1rem;
+  transition: height .2s ease;
 }
 
-.header > * {
+.header > *:first-child,
+.header > *:nth-child(2) {
   flex-basis: 50%;
   width: 100%;
 }
@@ -119,6 +121,25 @@ a[href] {
   font-size: 2.5rem;
 }
 
+.header.shrink {
+  flex-direction: row;
+  height: 4rem;
+  align-items: center;
+}
+
+.header.shrink > *:first-child {
+  flex-basis: 0;
+  flex-shrink: 100%;
+}
+
+.header.shrink > *:nth-child(2) {
+  flex-basis: 85%;
+}
+
+
+.header.shrink .title {
+  font-size: 1.5rem;
+}
 
 /* primary content */
 
@@ -147,6 +168,15 @@ nav > * {
 }
 
 
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
 
 
 /************** homepage layouts **************/
@@ -284,7 +314,8 @@ nav > * {
   margin-left: .5rem;
 }
 
-.classpage .posts-list > .item > .button-panel .icon {
+.classpage .posts-list > .item > .button-panel .up-btn,
+.classpage .posts-list > .item > .button-panel .comment-btn {
   width: 1.2rem;
   height: 1.3rem;
 }
