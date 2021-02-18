@@ -10,24 +10,24 @@
   </head>
 
   <body>
-    <main>
-      <div class="homepage">
-        <nav>
-          <label class="title"> Your Classes </label>
-        </nav>
+    <div class="homepage">
+      <div class="header">
+        <span></span>
+        <label class="title"> Your Classes </label>
+      </div>
 
+      <main>
         <div class="class-list">
           {{#each classes}}
             <a class="item" href="class/{{url}}"> 
-              <span class="icon"> {{number}} </span>
+              <span class="symbol"> {{number}} </span>
               <label> {{title}} </label>
             </a>
           {{/each}}
         </div>
-
         <button class="join-btn"> Join a class </button>
-
-      </div>
-    </main>
+      </main>
+      
+    </div>
   </body>
 </html>

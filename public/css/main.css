@@ -1,4 +1,19 @@
-/* defaults */
+/************** variables **************
+  Edit css variables here
+  - Using a variable example:
+      background: var(--post-bg);
+*/
+:root {
+  --post-bg: rgb(211, 211, 211);
+  --icon-bg: rgb(211, 211, 211);
+  --button-bg: rgb(233, 233, 233);
+  --nav-bg: rgb(211, 211, 211);
+}
+
+
+
+
+/************** element defaults **************/ 
 
 * {
   padding: 0;
@@ -21,10 +36,10 @@ html, body {
   height: 100%;
 }
 
-
 button {
   outline: none;
   border: none;
+  background: var(--button-bg);
 }
 
 button:focus{ 
@@ -36,47 +51,21 @@ a[href] {
   color: inherit;
 }
 
-.icon {
+
+
+/************** button icons **************/ 
+
+/* i usually just apply these styles to <span> tags to avoid default button styles since im just overlaying an image */
+
+.back-btn, .home-btn, .group-btn, .up-btn, .comment-btn, .post-btn {
   display: flex;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
 }
-
-/* wrap every page with <main> tag */
-
-main {
-  display: flex;
-  flex: 1 1;
-  flex-direction: colomn;
-}
-
-nav {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-nav > .back-btn {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-
-.title {
-  font-weight: bold; 
-  font-size: 2.5rem;
-  padding: 4rem 1rem 2rem;
-}
-
-
-
-/* buttons */
 
 .back-btn {
   background-image: url("icons/navigate_before-24px.svg");
-  background-position-x: -15px;
-  width: 2.7rem;
-  height: 2.7rem;
 }
 
 .home-btn {
@@ -99,156 +88,215 @@ nav > .back-btn {
   background-image: url("icons/create-24px.svg")
 }
 
-/* homepage */
 
-.homepage {
+
+
+/************** default page layout **************/ 
+
+/* header for title and back button */
+
+.header {
   position: relative;
   display: flex;
-  flex: 1 1;
   flex-direction: column;
-  overflow: auto;
+  height: 10rem;
+  padding: 1rem;
 }
 
-.homepage > .class-list {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1;
-}
-
-.homepage > .class-list > .item {
-  display: flex;
-  align-items: center;
+.header > * {
+  flex-basis: 50%;
   width: 100%;
-  height: fit-content;
-  padding: 1rem 3rem;
-  font-weight: bold;
 }
 
-.homepage > .class-list > .item * {
+.header .back-btn {
+  background-position-x: -15px;
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.header .title {
+  font-weight: bold; 
+  font-size: 2.5rem;
+}
+
+
+/* primary content */
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+  padding: 0 1rem;
+}
+
+/* navbar */
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: var(--nav-bg);
+  height: 3.5rem;
+}
+
+nav > * {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: center;
+  background-size: 15% !important;
+}
+
+
+
+
+/************** homepage layouts **************/
+
+/* * *
+
+- these are the styles i change the most.
+- i always use rem for units.
+
+.some-style {
+  position: ___;              (rarely need to set position)
+  display: flex;              (will set to flex if necessary) 
+  flex-direction: column;     (if applicable)
+  width: ___rem;              (dimensions if applicable)
+  height: ___rem; 
+  padding: ___rem;            (padding OR margins, i usually dont use both)
+  margin: ____rem;
+  background: ___;            (background color)
+  font-size: ___rem;          (fonts if applicable, will use parent font by default)
+}
+
+* * */
+
+
+
+.homepage,
+.homepage > .class-list {
+  position: relative;         /* not necessary unless you want floating elements (e.g post button) */
+  display: flex;              /* this turns the element into a flex box that can shrink/expand, center elements, etc. */
+  flex-direction: column;     /* displays elements vertically  -- will be horizontal by default*/
+  flex: 1 1;                  /* only used on elements that fill as much space as possible (e.g class list, posts feed) */
+}
+
+
+.homepage .class-list {
+  margin-bottom: 15vh;
+}
+
+
+.homepage .class-list > .item {
+  display: flex;
+  align-items: center;        /* will center child elements horizontally if elements are displayed vertically and vice versa */
+  width: 100%;
+  padding: 1.5rem 2rem;       /* padding: top left (bottom) (right)
+                                  - if bottom and right are unspecified then it applies same values from top and left.
+                                  - can also just using padding-top, padding-left, etc. for specifying a single direction
+                              */
+  font-weight: bold
+}
+
+.homepage .class-list > .item * {
   cursor: pointer;
 }
 
-.homepage > .class-list > .item > .icon {
+.homepage .class-list > .item > .symbol {
   display: flex;
   width: 4rem;
   height: 4rem;
   align-items: center;
-  justify-content: center;
-  background: lightgray;
+  justify-content: center;    /* will center child elements vertically if elements are displayed horizontally and vice versa */
+  background: var(--icon-bg); /* using color from --icon-bg variable */
   border-radius: 1.3rem;
   font-size: 1.3rem;
-  margin-right: 1rem;
+  margin-right: 1rem;         /* works the same way as padding values */
 }
 
-.homepage > .class-list > .item > label {
+.homepage .class-list > .item > label {
   font-size: 1.5rem;
 }
 
-.homepage > .join-btn {
+
+.homepage .join-btn {
   position: fixed;
   bottom: 2rem;
   width: 10rem;
   height: 3rem;
-  align-self: center;
-  background: lightgray;
-  border-radius: 2rem;
+  align-self: center;         /* same thing as align items but applies it to self instead of child elements */
+  background: var(--button-bg);
+  border-radius: 2rem;        /* changes how round borders are. 2-5rem is usually perfectly round. */
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* class page */
 
-.class-page {
+
+
+/************** class page layouts **************/
+
+.classpage,
+.classpage .posts-list  {
   position: relative;
   display: flex;
   flex-direction: column;
   flex: 1 1;
 }
 
-.class-page > .posts-list {
-  position: relative;
-  display: flex;
-  flex: 1 1;
-  flex-direction: column;
-  overflow: auto;
-  padding: 0rem 1rem;
-}
 
-.class-page > .posts-list > .item {
+.classpage .posts-list > .item {
   display: flex;
   flex-direction: column;
   padding: .8rem;
   background: lightgray;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
-.class-page > .posts-list > .item:not(:last-child),
-.class-page > .posts-list > .item > *:not(:last-child) {
+.classpage .posts-list > .item,
+.classpage .posts-list > .item > *:not(:last-child) {
   margin-bottom: 1rem;
 }
 
-.class-page > .posts-list > .item > .header {
+
+.classpage .posts-list > .item > .name {
   display: flex;
+  align-items: center;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.class-page > .posts-list > .item > .header > .icon {
+.classpage .posts-list > .item > .name > .picture {
   background: rgb(75, 75, 75);
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 2rem;
-  margin-right: 1rem;
+  margin-right: .8rem;
 }
 
-.class-page > .posts-list > .item > .button-panel {
+
+.classpage .posts-list > .item > .button-panel {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-.class-page > .posts-list > .item > .button-panel * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.classpage .posts-list > .item > .button-panel label {
+  margin-left: .5rem;
 }
 
-.class-page > .posts-list > .item > .button-panel label {
-  margin-top: -.25rem;
+.classpage .posts-list > .item > .button-panel .icon {
+  width: 1.2rem;
+  height: 1.3rem;
 }
 
-.class-page > .posts-list > .item > .button-panel .icon {
-  width: 1rem;
-  height: 1rem;
-  margin-right: .5rem;
-}
 
-.class-page .post-btn {
+.classpage .post-btn {
   position: fixed;
-  right: 2rem;
+  right: 1rem;
   bottom: 5rem;
   width: 3rem;
   height: 3rem;
+  border-radius: 2rem;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 2rem;
-}
-
-footer {
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem 0;
-  background: lightgray
-}
-
-footer > * {
-  display: flex;
-  flex-basis: 40%;
-  height: 2rem;
-  justify-content: center;
-}
-
-footer .home-btn,
-footer .group-btn {
-  width: 2rem;
-  height: 2rem;
 }

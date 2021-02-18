@@ -10,37 +10,42 @@
   </head>
 
   <body>
-    <main>
-      <div class="class-page">
-        <nav>
-          <a class="back-btn icon" href="/"> </a>
-          <label class="title"> {{title}} </label>
-        </nav>
-        <div class="posts-list">
-          
-          {{#each posts}}
-            <a class="item"> 
-              <span class="header">
-                <span class="icon"></span>
-                <label class="name"> {{name}} </label>
-              </span>
-              <p class="text"> {{text}} </p>
-              <br/>
-              <span class="button-panel">
-                <span class="up-btn icon"> </span>
-                <span class="comment"> <span class="comment-btn icon"> </span> <label> Comment </label> </span>
-              </span>
-            </a>
-          {{/each}}
-          
-          <button class="post-btn"> </button>
-        </div>
+      <div class="classpage">
 
-        <footer>
-          <a href="/class/{{url}}"> <span class="home-btn icon" > </span> </a>
-          <a href="/class/{{url}}/groups"> <span class="group-btn icon" > </span> </a>
-        </foopter>
+          <div class="header">
+            <span> <a class="back-btn icon" href="/"> </a> </span>
+            <label class="title"> {{title}} </label>
+          </div>
+
+          <main>
+            <div class="posts-list">
+              {{#each posts}}
+                <a class="item"> 
+                  <span class="name">
+                    <span class="picture"></span>
+                    <label class="name"> {{name}} </label>
+                  </span>
+                  <p class="text"> {{text}} </p>
+                  <br/>
+                  <span class="button-panel">
+                    <span class="up-btn icon"> </span>
+                    <span class="flex"> 
+                      <span class="comment-btn icon"> </span>  
+                      <label> Comment </label> 
+                    </span>
+                  </span>
+                </a>
+              {{/each}}
+            </div>
+            <button class="post-btn"> </button>
+
+          </main>
+
+          <nav>
+            <a href="/class/{{url}}" class="home-btn icon"> </a>
+            <a href="/class/{{url}}/groups" class="group-btn icon"> </a>
+          </nav>
+
       </div>
-    </main>
   </body>
 </html>
