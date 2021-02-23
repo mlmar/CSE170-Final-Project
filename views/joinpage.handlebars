@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Triton Friends </title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/scroll.js"></script>
+  </head>
+
+  <body>
+    <div class="joinpage">
+      <div class="header">
+        <span></span>
+        <label class="title"> Join a Class </label>
+      </div>
+
+      <main>
+        <input type="text" placeholder="Search for a class"/>
+        <div class="class-list">
+          {{#each classes}}
+            <a class="item"> 
+            </a>
+          {{/each}}
+        </div>
+      </main>
+      
+    </div>
+  </body>
+</html>

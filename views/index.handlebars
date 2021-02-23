@@ -7,28 +7,16 @@
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/index.js"></script>
-    <script src="/js/scroll.js"></script>
   </head>
 
   <body>
-    <div class="homepage">
-      <div class="header">
-        <span></span>
-        <label class="title"> Your Classes </label>
-      </div>
-
-      <main>
-        <div class="class-list">
-          {{#each classes}}
-            <a class="item" href="class/{{url}}"> 
-              <span class="symbol"> {{number}} </span>
-              <label> {{title}} </label>
-            </a>
-          {{/each}}
-        </div>
-        <button class="join-btn"> Join a class </button>
-      </main>
-      
+    <div class="login">
+      <label> Triton Friends </label>
+      <form class="login-form" action="/login">
+        <input type="text" placeholder="Username" name="username"/>
+        <input type="password" placeholder="Password" name="password"/>
+        <input type="submit" text="Login"/>
+      </form>
     </div>
   </body>
 </html>

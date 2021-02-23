@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Triton Friends </title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/scroll.js"></script>
+  </head>
+
+  <body>
+    <div class="homepage">
+      <div class="header">
+        <span></span>
+        <label class="title"> Your Classes</label>
+      </div>
+
+      <main>
+        <div class="class-list">
+          {{#each classes}}
+            <a class="item" href="/{{../user}}/class/{{url}}"> 
+              <span class="symbol"> {{number}} </span>
+              <label> {{title}} </label>
+            </a>
+          {{/each}}
+        </div>
+        <a class="join-btn" href="/{{user}}/join"> Join a class </a>
+      </main>
+      
+    </div>
+  </body>
+</html>

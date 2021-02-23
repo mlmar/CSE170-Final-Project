@@ -5,7 +5,10 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index.js');
-var classPage = require('./routes/classPage.js')
+var login = require('./routes/login.js');
+var homepage = require('./routes/homepage.js');
+var joinpage = require('./routes/joinpage.js');
+var classpage = require('./routes/classpage.js')
 
 app = express();
 
@@ -20,9 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // routes
-app.get('/', index.view);
-app.get('/class/:id/', classPage.view)
-app.get('/class/:id/:page', classPage.view)
+app.get('/', index.view); // login form page
+app.get('/login', login.login); // send login info here
+
+app.get('/:user/home', homepage.view) // redirected here after verifying login
+app.get('/:user/join', joinpage.view) // redirected here after verifying login
+app.get('/:user/join/:id', joinpage.join) // redirected here after verifying login
+
+app.get('/:user/class/:id', classpage.view) // feed page
+app.get('/:user/class/:id/:page', classpage.view) // groups page
 
 
 // server start

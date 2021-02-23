@@ -3,24 +3,29 @@ var posts = require("../data/posts.json")
 
 /* 
   classPage html route 
-    {req} : contains class id param
-    {res} : server response
+    {req} : contains class id param, page param and user param
+    {res} : server response to display appropriate page
 */
 exports.view = function(req, res) {
+  var user = req.params.user;
   var id = req.params.id;
   var page = req.params.page;
 
-  if(!page) {
-    res.render('classPage', {
-      title: classes.classes[id].title,
-      url: classes.classes[id].url,
-      posts: posts.example
-    });
-  } else {
-    res.render('classPage', {
-      title: classes.classes[id].title,
-      url: classes.classes[id].url
-    });
-  }
+  switch(page) {
+    case "groups":
+      res.render('groupspage', {
+        title: classes.classes[id].title,
+        url: classes.classes[id].url,
+        user: user
+      });
+      break;
 
+    default:
+      res.render('classpage', {
+        title: classes.classes[id].title,
+        url: classes.classes[id].url,
+        posts: posts.example,
+        user: user
+      });
+  }
 }
