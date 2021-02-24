@@ -1,4 +1,4 @@
-var classes = require("../data/classes.json")
+var info = require ("../data/user.json");
 
 /*
   Receives username and password from login page
@@ -9,9 +9,12 @@ var classes = require("../data/classes.json")
     {res} : sends back homepage
 */
 exports.login = function(req, res) {
-  var user = {
-		name: req.query.username,
-		password: req.query.password,
-	}
-  res.redirect(`/${user.name}/home`)
+  var username= req.body.username;
+  var password = req.body.password;
+
+  info.user.username = username;
+
+  if(username === info.wizard.username && password === info.wizard.password) {
+    res.redirect('/home');
+  }
 }

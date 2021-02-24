@@ -24,14 +24,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
 app.get('/', index.view); // login form page
-app.get('/login', login.login); // send login info here
+app.post('/login', login.login); // send login info here
+app.get('/home', homepage.view); // redirected here after logging in
 
-app.get('/:user/home', homepage.view) // redirected here after verifying login
-app.get('/:user/join', joinpage.view) // redirected here after verifying login
-app.get('/:user/join/:id', joinpage.join) // redirected here after verifying login
+app.get('/join', joinpage.view) // shows when user presses join
 
-app.get('/:user/class/:id', classpage.view) // feed page
-app.get('/:user/class/:id/:page', classpage.view) // groups page
+app.get('/class/:id', classpage.view) // feed page
+app.get('/class/:id/:page', classpage.view) // groups page
 
 
 // server start

@@ -1,3 +1,4 @@
+var info = require("../data/user.json")
 var classes = require("../data/classes.json")
 var posts = require("../data/posts.json")
 
@@ -7,7 +8,6 @@ var posts = require("../data/posts.json")
     {res} : server response to display appropriate page
 */
 exports.view = function(req, res) {
-  var user = req.params.user;
   var id = req.params.id;
   var page = req.params.page;
 
@@ -16,7 +16,7 @@ exports.view = function(req, res) {
       res.render('groupspage', {
         title: classes.classes[id].title,
         url: classes.classes[id].url,
-        user: user
+        user: info.user.username
       });
       break;
 
@@ -25,7 +25,7 @@ exports.view = function(req, res) {
         title: classes.classes[id].title,
         url: classes.classes[id].url,
         posts: posts.example,
-        user: user
+        user: info.user.username
       });
   }
 }

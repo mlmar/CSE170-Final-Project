@@ -13,19 +13,19 @@
     <div class="homepage">
       <div class="header">
         <span></span>
-        <label class="title"> Your Classes</label>
+        <label class="title"> Your Classes </label>
       </div>
 
       <main>
         <div class="class-list">
           {{#each classes}}
-            <a class="item" href="/{{../user}}/class/{{url}}"> 
+            <a class="item" href="/class/{{url}}"> 
               <span class="symbol"> {{number}} </span>
               <label> {{title}} </label>
             </a>
           {{/each}}
         </div>
-        <a class="join-btn" href="/{{user}}/join"> Join a class </a>
+        <a class="join-btn" href="/join"> Join a class </a>
       </main>
       
     </div>

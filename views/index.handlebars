@@ -12,10 +12,10 @@
   <body>
     <div class="login">
       <label> Triton Friends </label>
-      <form class="login-form" action="/login">
-        <input type="text" placeholder="Username" name="username"/>
-        <input type="password" placeholder="Password" name="password"/>
-        <input type="submit" text="Login"/>
+      <form class="login-form" method="post" action="/login">
+        <input class="username" type="text" placeholder="Username" name="username"/>
+        <input class="password" type="password" placeholder="Password" name="password"/>
+        <input class="login" type="submit" text="Login"/>
       </form>
     </div>
   </body>
