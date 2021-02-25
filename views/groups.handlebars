@@ -19,10 +19,10 @@
           </div>
 
           <main>
-            <div class="groups-list">
+            <div class="groups-list wrap flex">
               {{#if groups}}
                 {{#each groups}}
-                  <a class="item"> 
+                  <a class="item" href="group/{{id}}"> 
                     <label> {{name}} </label>
                   </a>
                 {{/each}}

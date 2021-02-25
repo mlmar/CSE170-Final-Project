@@ -30,17 +30,20 @@ app.post('/login', login.login); // send login info here
 
 app.get('/home', home.view); // redirected here after logging in
 app.get('/join/class', joinClass.view) // shows when user presses join
-app.get('/search', joinClass.search) // shows when user presses join
+app.post('/joinClass/', joinClass.join) // join a user class
+app.get('/search', joinClass.search) // search route with query
 
 app.get('/class/:id', classPage.view) // feed page
 app.post('/sendPost', classPage.post) // post to a class
 
 app.get('/class/:id/groups', classPage.viewGroups) // groups page
-app.get('/class/:id/groups/create', createGroup.view); // join a group page
-app.get('/class/:id/groups/join', joinGroup.view); // join a group page
-app.post('/requestToJoinGroup', joinGroup.join);
-app.get('/class/:id/groups/:group', joinGroup.viewGroup); // join a group page
-app.get('/group/:group', group.view); // view a specific group
+app.get('/class/:id/group/:group', group.view); // view a specific group
+app.get('/class/:id/groups/create', createGroup.view); // create a group page
+app.get('/class/:id/groups/join', joinGroup.view); // list of gorups to join
+
+app.get('/class/:id/groups/:group', joinGroup.viewGroup); // view a group to join
+app.post('/requestToJoinGroup', joinGroup.join); // join the group
+
 
 
 

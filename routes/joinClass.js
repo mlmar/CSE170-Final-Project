@@ -14,3 +14,8 @@ exports.search = function(req, res) {
   var searchedClasses = classes.classes.filter(c => (c.title.toLowerCase().includes(term.toLowerCase())));
   res.render('joinClass', { classes: searchedClasses })
 }
+
+exports.join = function(req, res) {
+  var id = req.body.id;
+  classes.joined.push(classes.classes[id]);
+}

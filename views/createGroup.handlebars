@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/createGroup.js"></script>
   </head>
 
   <body>
       <div class="createGroup page">
 
           <div class="header">
-            <span> <a class="back-btn icon" href="/class/{{id}}/groups"> </a> </span>
+            <span> <a class="back-btn icon" href="../groups"> </a> </span>
             <label class="title"> Create Study Group </label>
           </div>
 
           <main>
-            <form>
+            <form class="group-form">
               <input autocomplete="off" type="text" placeholder="Group Name" name="name"/>
               <input autocomplete="off" type="text" placeholder="Description" name="description"/>
               <input autocomplete="off" type="text" placeholder="Contact Info" name="contact"/>

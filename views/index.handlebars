@@ -10,10 +10,12 @@
   </head>
 
   <body>
-    <div class="login">
-      <label> TritonFriends </label>
-      <label> subtitle </label>
-      <form class="login-form" method="post" action="/login">
+    <div class="login page">
+      <div class="flex-col">
+        <label> TritonFriends </label>
+        <label> subtitle </label>
+      </div>
+      <form class="login-form flex-col" method="post" action="/login">
         <input type="text" placeholder="Username" name="username"/>
         <input type="password" placeholder="Password" name="password"/>
         <input type="submit" value="Login"/>

@@ -10,20 +10,19 @@ var groups = require("../data/groups.json");
 */
 exports.view = function(req, res) {
   var id = req.params.id;
+  var c = classes.classes[id];
 
   res.render('classPage', {
-    title: classes.classes[id].title,
-    url: classes.classes[id].url,
-    posts: posts.example,
+    title: c.title,
+    url: c.url,
+    posts: posts[c.title],
     user: info.user.username
   });
 }
 
 exports.viewGroups = function(req, res) {
   var id = req.params.id;
-
   var userGroups = groups.joined.length > 0 ? groups.joined : null;
-  console.log(groups.joined);
 
   res.render('groups', {
     title: classes.classes[id].title,
@@ -33,5 +32,11 @@ exports.viewGroups = function(req, res) {
 }
 
 exports.post = function(req, res) {
-  posts.example.unshift(req.body);
+  var id = req.body.id;
+  var selectedClass = classes.classes[id].title;
+  var userPost = req.body.userPost;
+  if(!posts[selectedClass]) {
+    posts[selectedClass] = [];
+  }
+  posts[selectedClass].unshift(userPost);
 }

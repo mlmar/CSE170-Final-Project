@@ -7,6 +7,7 @@
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/scroll.js"></script>
+    <script> var id="{{url}}"; </script>
     <script src="/js/classPage.js"></script>
   </head>
 
@@ -19,7 +20,7 @@
           </div>
 
           <main>
-            <div class="posts-list">
+            <div class="posts-list flex-col fill">
               {{#each posts}}
                 <a class="item"> 
                   <span class="name">

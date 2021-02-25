@@ -40,7 +40,7 @@ function handleConfirmPost() {
 
   $(".posts-list").prepend(newPost);
 
-  $.post('/sendPost', userPost);
+  $.post('/sendPost', { id, userPost});
   togglePost();
 }
 
@@ -49,7 +49,7 @@ function toggleComment() {
 }
 
 function handleComment() {
-  alert("//todo post request");
+  alert("Comment function not implemented yet.");
   toggleComment();
 }
 

@@ -1,5 +1,5 @@
 {
-  "example": [
+  "joined": [
     {
       "number": "107a",
       "title": "COGS 107a",
@@ -36,6 +36,11 @@
       "number": "170",
       "title": "CSE 170",
       "url": "5"
+    },
+    {
+      "number": "120",
+      "title": "Cogs 120",
+      "url": "6"
     }
   ]
 }
