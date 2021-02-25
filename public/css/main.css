@@ -158,6 +158,16 @@ main {
   padding-top: 10rem !important;
 }
 
+
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+
 /* navbar */
 
 nav {
@@ -277,15 +287,6 @@ nav > * > * {
 
 
 /************** class page layouts **************/
-
-.classPage,
-.classPage .posts-list {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1;
-}
-
 
 .classPage .posts-list > .item {
   display: flex;
