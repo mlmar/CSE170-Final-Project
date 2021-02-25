@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> {{title}} </title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/scroll.js"></script>
+  </head>
+
+  <body>
+      <div class="classpage">
+
+          <div class="header">
+            <span></span>
+            <label class="title"> {{title}} </label>
+          </div>
+
+          <main>
+            <div class="groups-list">
+              {{#each groups}}
+                <a class="item"> 
+                </a>
+              {{/each}}
+            </div>
+          </main>
+
+          <nav>
+            <a href="/class/{{url}}"> <span class="home-btn icon"> </span> </a>
+            <a href="/class/{{url}}/groups"> <span class="group-btn icon"> </span> </a>
+          </nav>
+
+      </div>
+  </body>
+</html>

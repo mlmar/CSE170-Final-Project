@@ -6,5 +6,5 @@ var classes = require("../data/classes.json");
     {res} : server response
 */
 exports.view = function(req, res) {
-  res.render('joinpage');
+  res.render('joinClass', classes);
 }

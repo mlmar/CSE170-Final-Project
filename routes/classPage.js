@@ -13,7 +13,7 @@ exports.view = function(req, res) {
 
   switch(page) {
     case "groups":
-      res.render('groupspage', {
+      res.render('groups', {
         title: classes.classes[id].title,
         url: classes.classes[id].url,
         user: info.user.username
@@ -21,7 +21,7 @@ exports.view = function(req, res) {
       break;
 
     default:
-      res.render('classpage', {
+      res.render('classPage', {
         title: classes.classes[id].title,
         url: classes.classes[id].url,
         posts: posts.example,

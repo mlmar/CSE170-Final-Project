@@ -1,14 +1,15 @@
 // modules
 var express = require('express');
-var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index.js');
 var login = require('./routes/login.js');
-var homepage = require('./routes/homepage.js');
-var joinpage = require('./routes/joinpage.js');
-var classpage = require('./routes/classpage.js')
+var home = require('./routes/home.js');
+var joinClass = require('./routes/joinClass.js');
+var classPage = require('./routes/classPage.js')
+var joinGroup = require('./routes/joinGroup.js')
+var group = require('./routes/group.js')
 
 app = express();
 
@@ -25,12 +26,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routes
 app.get('/', index.view); // login form page
 app.post('/login', login.login); // send login info here
-app.get('/home', homepage.view); // redirected here after logging in
 
-app.get('/join', joinpage.view) // shows when user presses join
+app.get('/home', home.view); // redirected here after logging in
+app.get('/join/class', joinClass.view) // shows when user presses join
 
-app.get('/class/:id', classpage.view) // feed page
-app.get('/class/:id/:page', classpage.view) // groups page
+app.get('/class/:id', classPage.view) // feed page
+app.get('/class/:id/:page', classPage.view) // groups page
+
+app.get('/class/:id/join', joinGroup.view); // join a group page
+app.get('/group/:group', group.view); // join a :group
 
 
 // server start
