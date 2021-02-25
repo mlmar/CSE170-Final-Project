@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <div class="joinpage">
+    <div class="joinClass">
       <div class="header">
         <span></span>
         <label class="title"> Join a Class </label>
@@ -18,9 +18,12 @@
 
       <main>
         <input type="text" placeholder="Search for a class"/>
+        <label> Departments </label>
         <div class="class-list">
           {{#each classes}}
-            <a class="item"> 
+            <a class="item" href="/class/{{url}}"> 
+              <span class="symbol"> {{number}} </span>
+              <label> {{title}} </label>
             </a>
           {{/each}}
         </div>

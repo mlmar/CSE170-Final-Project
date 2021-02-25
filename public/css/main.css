@@ -154,9 +154,7 @@ main {
   padding: 0 1rem;
 }
 
-.homepage > main,
-.joinpage > main,
-.classpage > main {
+main {
   padding-top: 10rem !important;
 }
 
@@ -214,8 +212,8 @@ nav > * > * {
 
 * * */
 
-.homepage,
-.homepage > .class-list {
+.home,
+.home > .class-list {
   position: relative;         /* not necessary unless you want floating elements (e.g post button) */
   display: flex;              /* this turns the element into a flex box that can shrink/expand, center elements, etc. */
   flex-direction: column;     /* displays elements vertically  -- will be horizontal by default*/
@@ -223,12 +221,12 @@ nav > * > * {
 }
 
 
-.homepage .class-list {
+.home .class-list {
   margin-bottom: 15vh;
 }
 
 
-.homepage .class-list > .item {
+.home .class-list > .item {
   display: flex;
   align-items: center;        /* will center child elements horizontally if elements are displayed vertically and vice versa */
   width: 100%;
@@ -239,11 +237,11 @@ nav > * > * {
   font-weight: bold
 }
 
-.homepage .class-list > .item * {
+.home .class-list > .item * {
   cursor: pointer;
 }
 
-.homepage .class-list > .item > .symbol {
+.home .class-list > .item > .symbol {
   display: flex;
   width: 4rem;
   height: 4rem;
@@ -255,12 +253,12 @@ nav > * > * {
   margin-right: 1rem;         /* works the same way as padding values */
 }
 
-.homepage .class-list > .item > label {
+.home .class-list > .item > label {
   font-size: 1.5rem;
 }
 
 
-.homepage .join-btn {
+.home .join-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,8 +278,8 @@ nav > * > * {
 
 /************** class page layouts **************/
 
-.classpage,
-.classpage .posts-list  {
+.classPage,
+.classPage .posts-list {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -289,7 +287,7 @@ nav > * > * {
 }
 
 
-.classpage .posts-list > .item {
+.classPage .posts-list > .item {
   display: flex;
   flex-direction: column;
   padding: .8rem;
@@ -297,20 +295,20 @@ nav > * > * {
   font-size: .8rem;
 }
 
-.classpage .posts-list > .item,
-.classpage .posts-list > .item > *:not(:last-child) {
+.classPage .posts-list > .item,
+.classPage .posts-list > .item > *:not(:last-child) {
   margin-bottom: 1rem;
 }
 
 
-.classpage .posts-list > .item > .name {
+.classPage .posts-list > .item > .name {
   display: flex;
   align-items: center;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.classpage .posts-list > .item > .name > .picture {
+.classPage .posts-list > .item > .name > .picture {
   background: rgb(75, 75, 75);
   width: 1.5rem;
   height: 1.5rem;
@@ -319,24 +317,24 @@ nav > * > * {
 }
 
 
-.classpage .posts-list > .item > .button-panel {
+.classPage .posts-list > .item > .button-panel {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.classpage .posts-list > .item > .button-panel label {
+.classPage .posts-list > .item > .button-panel label {
   margin-left: .5rem;
 }
 
-.classpage .posts-list > .item > .button-panel .up-btn,
-.classpage .posts-list > .item > .button-panel .comment-btn {
+.classPage .posts-list > .item > .button-panel .up-btn,
+.classPage .posts-list > .item > .button-panel .comment-btn {
   width: 1.2rem;
   height: 1.3rem;
 }
 
 
-.classpage .post-btn {
+.post-btn {
   position: fixed;
   right: 1rem;
   bottom: 5rem;
@@ -345,4 +343,15 @@ nav > * > * {
   border-radius: 2rem;
   background-position: center;
   background-size: 55%;
+}
+
+
+/************** groups page layouts **************/
+
+.groupsPage,
+.groupsPage .posts-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
 }
