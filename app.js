@@ -30,6 +30,7 @@ app.post('/login', login.login); // send login info here
 
 app.get('/home', home.view); // redirected here after logging in
 app.get('/join/class', joinClass.view) // shows when user presses join
+app.get('/search', joinClass.search) // shows when user presses join
 
 app.get('/class/:id', classPage.view) // feed page
 app.post('/sendPost', classPage.post) // post to a class

@@ -17,11 +17,13 @@
       </div>
 
       <main>
-        <input type="text" placeholder="Search for a class"/>
-        <label> Departments </label>
+        <form method="get" action="/search">
+          <input type="text" placeholder="Search for a class" name="term"/>
+          <input type="submit" value="Search"/>
+        </form>
         <div class="class-list">
           {{#each classes}}
-            <a class="item" href="/class/{{url}}"> 
+            <a class="item"> 
               <span class="symbol"> {{number}} </span>
               <label> {{title}} </label>
             </a>
