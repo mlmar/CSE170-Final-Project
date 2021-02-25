@@ -1,24 +1,20 @@
 {
   "example": [
     {
-      "name": "Name goes here",
-      "text": "sample text goes here"
-    },
-    {
       "name": "King Henry XIII",
       "text": "I'm not sure how to format my lab report. Can anyone help me out?"
     },
     {
-      "name": "Bro",
-      "text": "How do I do 3a"
+      "name": "Joe",
+      "text": "Am I doing 3a right?"
     },
     {
       "name": "Jhon Smit",
-      "text": "Can someone give me a hint on number 2"
+      "text": "Can someone give me a hint on number 2?"
     },
     {
-      "name": "Loony Toon",
-      "text": "Uhhh"
+      "name": "Jim",
+      "text": "How do we re-render pages in express?"
     }
   ]
 }

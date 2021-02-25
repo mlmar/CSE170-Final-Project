@@ -14,7 +14,7 @@ exports.login = function(req, res) {
 
   info.user.username = username;
 
-  if(username === info.wizard.username && password === info.wizard.password) {
+  // if(username === info.wizard.username && password === info.wizard.password) {
     res.redirect('/home');
-  }
+  // }
 }

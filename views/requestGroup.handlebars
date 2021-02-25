@@ -6,26 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/requestGroup.js"></script>
   </head>
 
   <body>
-      <div class="group page">
-
-          <div class="header shrink">
-            <span> <a class="back-btn icon" href="#"> </a> </span>
+      <div class="joinGroup page">
+          <div class="header">
+            <span> <a class="back-btn icon" href="join"> </a> </span>
             <label class="title"> Find Study Group </label>
           </div>
 
           <main>
-            <div>
-              <label> group name </label>
-              <p> group description </p>
-              <span> icons icons icons </span>
-              <buttons> request to join </buttons>
-            </div>
-
+            <label class="name" id={{id}}> {{name}} </label>
+            <p> {{description}} </p>
+            <button class="join-btn" id="join"> Join </button>
           </main>
-
       </div>
   </body>
 </html>

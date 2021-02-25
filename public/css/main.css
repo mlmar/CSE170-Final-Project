@@ -50,6 +50,10 @@ a[href] {
   color: inherit;
 }
 
+textarea:focus, input:focus{
+  outline: none;
+}
+
 
 
 /************** button icons **************/ 
@@ -76,19 +80,20 @@ a[href] {
 }
 
 .up-btn {
-  background-image: url("icons/north-24px.svg")
+  background-image: url("icons/north-24px.svg");
 }
 
 .comment-btn {
-  background-image: url("icons/mode_comment-24px.svg")
+  background-image: url("icons/mode_comment-24px.svg");
 }
 
 .post-btn {
-  background-image: url("icons/create-24px.svg")
+  background-image: url("icons/create-24px.svg");
 }
 
-
-
+.highlight {
+  filter: invert(62%) sepia(77%) saturate(4857%) hue-rotate(162deg) brightness(95%) contrast(102%);
+}
 
 /************** default page layout **************/ 
 
@@ -182,11 +187,34 @@ nav > * {
   flex-basis: 50%;
   align-items: center;
   justify-content: center;
+  opacity: .5;
 }
 
 nav > * > * {
   height: 2rem;
   width: 2rem;
+}
+
+nav > *.selected {
+  opacity: 1;
+}
+
+
+
+
+
+.joinClass .class-list,
+.groupsPage .groups-list {
+  display: flex;
+  flex: 1 1;
+  flex-wrap: wrap
+}
+
+.joinClass .class-list > *.item,
+.groupsPage .groups-list > *.item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
 }
 
 
@@ -284,8 +312,6 @@ nav > * > * {
 }
 
 
-
-
 /************** class page layouts **************/
 
 .classPage .posts-list > .item {
@@ -346,6 +372,59 @@ nav > * > * {
   background-size: 55%;
 }
 
+.comment-form,
+.post-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: lightgray;
+  padding: .5rem;
+  visibility: hidden;
+}
+
+.comment-form.visible,
+.post-form.visible {
+  visibility: visible;
+  z-index: 5;
+}
+
+.comment-form > .cancel,
+.post-form > .cancel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: .2rem;
+  border-radius: 2rem;
+  background: white;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+.comment-form > textarea,
+.post-form > textarea {
+  flex-basis: 50%;
+  border: none;
+  outline: none;
+  color: black;
+  background: none;
+  padding: 2rem;
+  font-size: 1rem;
+  resize: none;
+}
+
+.comment-form > span > .confirm,
+.post-form > span > .confirm {
+  float: right;
+  padding: .2rem 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+}
 
 /************** groups page layouts **************/
 
@@ -355,4 +434,53 @@ nav > * > * {
   display: flex;
   flex-direction: column;
   flex: 1 1;
+}
+
+.groupsPage .menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  right: 1rem;
+  bottom: 8rem;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .1s ease;
+}
+
+.groupsPage .menu.visible {
+  z-index: 2;
+  opacity: 1;
+}
+
+.groupsPage .menu > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  height: 2rem;
+  margin-bottom: .5rem;
+  background: lightgray;
+}
+
+.add-btn {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  right: 1rem;
+  bottom: 5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  font-size: 2rem;
+  transition: transform .2s ease;
+}
+
+.add-btn.rotate {
+  transform: rotate(45deg);
+}
+
+.joinGroup .groups-list {
+  display: flex;
+  flex-direction: column;
 }

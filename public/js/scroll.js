@@ -1,10 +1,6 @@
 $(document).ready(function() {
-	initializePage();
-})
-
-function initializePage() {
   $("main").on("scroll", handleScroll);
-}
+})
 
 function handleScroll() {
   var scrollPosition = $(this).scrollTop();

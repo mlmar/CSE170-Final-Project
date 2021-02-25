@@ -1,0 +1,21 @@
+{
+  "joined" : [],
+  "example": [
+    {
+      "name" : "The Gorls",
+      "description" : "We’re in section A04 and meet once a week on Zoom to go over that week’s lectures and quiz. We’re very serious about studying regularly so be sure you want to commit to our weekly meeting if you want to join!",
+      "id" : "0"
+    },
+    {
+      "name" : "107A Best Gang",
+      "description" : "We the best",
+      "id" : "1"
+    },
+    {
+      "name" : "Brain Gang",
+      "description" : "We only study brains",
+      "id" : "2"
+    }
+
+  ]
+}

@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/js/scroll.js"></script>
   </head>
 
   <body>
-      <div class="joinGroup page">
+      <div class="createGroup page">
+
           <div class="header">
             <span> <a class="back-btn icon" href="/class/{{id}}/groups"> </a> </span>
-            <label class="title"> Find Study Group </label>
+            <label class="title"> Create Study Group </label>
           </div>
 
           <main>
-            <div class="groups-list">
-              {{#each groups}}
-                <a class="item" href="{{id}}"> 
-                  {{name}}
-                </a>
-                <br/>
-              {{/each}}
-            </div>
+            <form>
+              <input autocomplete="off" type="text" placeholder="Group Name" name="name"/>
+              <input autocomplete="off" type="text" placeholder="Description" name="description"/>
+              <input autocomplete="off" type="text" placeholder="Contact Info" name="contact"/>
+              <input type="submit" value="Create"/>
+            </form>
+
           </main>
+
       </div>
   </body>
 </html>

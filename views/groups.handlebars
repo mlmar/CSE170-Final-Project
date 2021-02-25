@@ -7,6 +7,7 @@
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/scroll.js"></script>
+    <script src="/js/groups.js"></script>
   </head>
 
   <body>
@@ -19,22 +20,27 @@
 
           <main>
             <div class="groups-list">
-              <label> you aren't in any study groups in yet </label>
-              <a class="item"> 
-                <span> OOO </span>
-                <label> group name </label>
-              </a>
-              {{#each groups}}
-              {{/each}}
+              {{#if groups}}
+                {{#each groups}}
+                  <a class="item"> 
+                    <label> {{name}} </label>
+                  </a>
+                {{/each}}
+              {{else}}
+                <label> You aren’t in any study groups yet. Click the add button to find groups... </label>
+              {{/if}}
             </div>
 
-            <button class="post-btn"> </button>
-
+            <div class="menu">
+              <a href="/class/{{url}}/groups/create"> Create New Study Group </a>
+              <a href="/class/{{url}}/groups/join"> Find Study Group </a>
+            </div>
+            <button class="add-btn" id="add-btn"> + </button>
           </main>
 
           <nav>
             <a href="/class/{{url}}"> <span class="home-btn icon"> </span> </a>
-            <a href="/class/{{url}}/groups"> <span class="group-btn icon"> </span> </a>
+            <a href="/class/{{url}}/groups" class="selected"> <span class="group-btn icon"> </span> </a>
           </nav>
 
       </div>

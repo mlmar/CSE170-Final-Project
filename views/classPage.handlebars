@@ -7,6 +7,7 @@
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/scroll.js"></script>
+    <script src="/js/classPage.js"></script>
   </head>
 
   <body>
@@ -14,7 +15,7 @@
 
           <div class="header">
             <span> <a class="back-btn icon" href="/home"> </a> </span>
-            <label class="title"> {{title}} </label>
+            <label class="title" id={{url}}> {{title}} </label>
           </div>
 
           <main>
@@ -29,7 +30,7 @@
                   <br/>
                   <span class="button-panel">
                     <span class="up-btn icon"> </span>
-                    <span class="flex"> 
+                    <span class="flex comment-span"> 
                       <span class="comment-btn icon"> </span>  
                       <label> Comment </label> 
                     </span>
@@ -37,12 +38,30 @@
                 </a>
               {{/each}}
             </div>
+
+            <div class="comment-form">
+              <button class="cancel"> X </button>
+              <textarea placeholder="Comment something here..."></textarea>
+              <span>
+                <button class="confirm" id={{user}}> Comment </button>
+              </span>
+            </div>
+
+
+            <div class="post-form">
+              <button class="cancel"> X </button>
+              <textarea placeholder="Say something here..."></textarea>
+              <span>
+                <button class="confirm" id={{user}}> Post </button>
+              </span>
+            </div>
+
             <button class="post-btn"> </button>
 
           </main>
 
           <nav>
-            <a href="/class/{{url}}"> <span class="home-btn icon"> </span> </a>
+            <a href="/class/{{url}}" class="selected"> <span class="home-btn icon"> </span> </a>
             <a href="/class/{{url}}/groups"> <span class="group-btn icon"> </span> </a>
           </nav>
 
