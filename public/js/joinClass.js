@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $(".item").click(handleItemClick);
+  console.log(localStorage.getItem("test"));
 });
 
 function handleItemClick() {

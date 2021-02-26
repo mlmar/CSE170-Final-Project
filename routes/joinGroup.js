@@ -16,8 +16,9 @@ exports.viewGroup = function(req, res) {
 }
 
 exports.join = function(req, res) {
+  var user = req.session.username;
   var groupID = req.body.id;
   var groupToJoin = groups.example[groupID];
-  if(groups.joined.indexOf(groupToJoin) === -1)
-    groups.joined.push(groupToJoin);
+  if(groups.joined[user].indexOf(groupToJoin) === -1)
+    groups.joined[user].push(groupToJoin);
 }

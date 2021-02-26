@@ -2,9 +2,5 @@
   "user" : {
     "username" : "null",
     "password" : "null"
-  },
-  "wizard" : {
-    "username" : "test",
-    "password" : "123"
   }
 }

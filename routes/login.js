@@ -1,5 +1,3 @@
-var info = require ("../data/user.json");
-
 /*
   Receives username and password from login page
   TODO: validation for wizard of oz login
@@ -9,12 +7,6 @@ var info = require ("../data/user.json");
     {res} : sends back homepage
 */
 exports.login = function(req, res) {
-  var username= req.body.username;
-  var password = req.body.password;
-
-  info.user.username = username;
-
-  // if(username === info.wizard.username && password === info.wizard.password) {
-    res.redirect('/home');
-  // }
+  req.session.username = req.body.username;
+  res.redirect('/home');
 }

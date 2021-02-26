@@ -1,5 +1,6 @@
 // modules
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
@@ -22,6 +23,13 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended : true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use(session({
+  secret: "arbitrary",
+  resave: true,
+  saveUninitialized: true
+}))
 
 
 // routes

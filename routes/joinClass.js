@@ -17,5 +17,6 @@ exports.search = function(req, res) {
 
 exports.join = function(req, res) {
   var id = req.body.id;
-  classes.joined.push(classes.classes[id]);
+  var user = req.session.username;
+  classes.joined[user].push(classes.classes[id]);
 }

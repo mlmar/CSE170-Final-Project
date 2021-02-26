@@ -16,13 +16,18 @@ exports.view = function(req, res) {
     title: c.title,
     url: c.url,
     posts: posts[c.title],
-    user: info.user.username
+    user: req.session.username
   });
 }
 
 exports.viewGroups = function(req, res) {
+  var user = req.session.username;
+  if(!groups.joined[user]) {
+    groups.joined[user] = [];
+  }
+
   var id = req.params.id;
-  var userGroups = groups.joined.length > 0 ? groups.joined : null;
+  var userGroups = groups.joined[user].length > 0 ? groups.joined[user] : null;
 
   res.render('groups', {
     title: classes.classes[id].title,
@@ -34,7 +39,7 @@ exports.viewGroups = function(req, res) {
 exports.post = function(req, res) {
   var id = req.body.id;
   var selectedClass = classes.classes[id].title;
-  var userPost = req.body.userPost;
+  var userPost = { name: req.session.username, text: req.body.userPost.text };
   if(!posts[selectedClass]) {
     posts[selectedClass] = [];
   }
