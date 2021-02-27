@@ -6,7 +6,12 @@ var groups = require("../data/groups.json")
     {res} : server response
 */
 exports.view = function(req, res) {
-  res.render('joinGroup', { groups: groups.example, id: req.params.id });
+  var user = req.session.username;
+  var userGroups = groups.joined[user];
+
+  var showGroups = groups.example.filter(g => userGroups.indexOf(g) === -1);
+
+  res.render('joinGroup', { groups: showGroups, id: req.params.id });
 }
 
 exports.viewGroup = function(req, res) {

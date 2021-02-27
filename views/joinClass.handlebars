@@ -18,14 +18,12 @@
       </div>
 
       <main>
-        <form method="get" action="/search">
+        <form class="flex" method="get" action="/search">
           <input type="text" placeholder="Search for a class" name="term"/>
-          <input type="submit" value="Search"/>
         </form>
-        <div class="class-list wrap flex">
+        <div class="class-list flex-col">
           {{#each classes}}
             <a class="item" id={{url}}> 
-              <span class="symbol"> {{number}} </span>
               <label> {{title}} </label>
             </a>
           {{/each}}

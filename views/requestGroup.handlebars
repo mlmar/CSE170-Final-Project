@@ -11,16 +11,18 @@
   </head>
 
   <body>
-      <div class="joinGroup page">
+      <div class="requestGroup page">
           <div class="header">
             <span> <a class="back-btn icon" href="join"> </a> </span>
             <label class="title"> Find Study Group </label>
           </div>
 
           <main>
-            <label class="name" id={{id}}> {{name}} </label>
-            <p> {{description}} </p>
-            <button class="join-btn" id="join"> Join </button>
+            <div class="info flex-col fill">
+              <label class="name" id={{id}}> {{name}} </label>
+              <p> {{description}} </p>
+              <button class="join-btn" id="join"> Join </button>
+            </div>
           </main>
       </div>
   </body>

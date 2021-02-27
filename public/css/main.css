@@ -8,6 +8,8 @@
   --icon-bg: rgb(211, 211, 211);
   --button-bg: rgb(233, 233, 233);
   --nav-bg: rgb(211, 211, 211);
+
+  --md-text: 1.3rem;
 }
 
 
@@ -214,19 +216,52 @@ nav > *.selected {
 
 .wrap {
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .wrap > *.item {
   display: flex;
   flex-direction: column;
-  flex-basis: 50%;
-  height: 9rem;
+  flex-basis: 48%;
+  height: 8rem;
   margin-bottom: 1rem;
 }
 
 /************** logn layouts **************/
 
+.login {
+  justify-content: center;
+  padding: 3rem;
+}
 
+.login > .title {
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.login > .title > :first-child {
+  font-size: 3rem;
+}
+
+input[type=text],
+input[type=password] {
+  padding: .8rem .5rem;
+  border-radius: .5rem;
+  border: solid rgb(75, 75, 75);
+  border-width: 1px;
+  margin-bottom: 1rem;
+}
+
+.login input[type=submit] {
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 8rem;
+  align-self: center;
+  border-radius: 1rem;
+  padding: .5rem;
+  background: var(--icon-bg);
+}
 
 
 
@@ -281,7 +316,7 @@ nav > *.selected {
   justify-content: center;    /* will center child elements vertically if elements are displayed horizontally and vice versa */
   background: var(--icon-bg); /* using color from --icon-bg variable */
   border-radius: 1.3rem;
-  font-size: 1.3rem;
+  font-size: var(--md-text);
   margin-right: 1rem;         /* works the same way as padding values */
 }
 
@@ -305,6 +340,21 @@ nav > *.selected {
   font-weight: bold;
 }
 
+
+/************** join class page layouts **************/
+
+.joinClass input[type=text] {
+  width: 100%;
+}
+
+.joinClass .class-list {
+  padding: 0 .5rem;
+}
+
+.joinClass .class-list > .item {
+  font-weight: bold;
+  padding: .8rem 0;
+}
 
 /************** class page layouts **************/
 
@@ -422,6 +472,14 @@ nav > *.selected {
 
 /************** groups page layouts **************/
 
+.groupsPage .groups-list > .item {
+  background: var(--post-bg);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
 .groupsPage .menu {
   position: absolute;
   display: flex;
@@ -466,7 +524,55 @@ nav > *.selected {
   transform: rotate(45deg);
 }
 
-.joinGroup .groups-list {
-  display: flex;
-  flex-direction: column;
+/************** join groups page layouts **************/
+
+.joinGroup .groups-list > .item {
+  font-size: 1.1rem;
+}
+
+/************** request page layouts **************/
+
+.requestGroup main {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.requestGroup .info {
+  border-radius: 1rem;
+  background: var(--post-bg); 
+  padding: 1rem;
+}
+
+.requestGroup .info > * {
+  margin-bottom: 1rem;
+}
+
+.requestGroup .info > .name {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.requestGroup .info > p {
+  font-size: 1.2rem;
+}
+
+.requestGroup .info > .join-btn {
+  font-weight: bold;
+  font-size: 1rem;
+  width: 8rem;
+  align-self: center;
+  border-radius: 1rem;
+  padding: .5rem;
+  background: white;
+}
+
+
+/************** single group page layouts **************/
+
+.group main * {
+  margin-bottom: .8rem;
+}
+
+.group h3 {
+  font-size: 1.1rem;
 }
