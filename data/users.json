@@ -1,0 +1,9 @@
+{
+  "demo" : {
+    "username": "demo",
+    "name" : "Jhon Smit",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  }
+}

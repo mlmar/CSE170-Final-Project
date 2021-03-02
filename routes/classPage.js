@@ -1,4 +1,3 @@
-var info = require("../data/user.json");
 var classes = require("../data/classes.json");
 var posts = require("../data/posts.json");
 var groups = require("../data/groups.json");
@@ -44,4 +43,12 @@ exports.post = function(req, res) {
     posts[selectedClass] = [];
   }
   posts[selectedClass].unshift(userPost);
+}
+
+exports.viewList = function(req, res) {
+  var id = req.params.id;
+
+  res.render('list', {
+    url: classes.classes[id].url,
+  });
 }

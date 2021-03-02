@@ -6,6 +6,8 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index.js');
 var login = require('./routes/login.js');
+var createAccount = require('./routes/createAccount.js');
+var profile = require('./routes/profile.js')
 var home = require('./routes/home.js');
 var joinClass = require('./routes/joinClass.js');
 var classPage = require('./routes/classPage.js');
@@ -34,7 +36,11 @@ app.use(session({
 
 // routes
 app.get('/', index.view); // login form page
+app.get('/failed', index.view); // login form page
 app.post('/login', login.login); // send login info here
+app.get('/createAccount', createAccount.view); // send login info here
+app.post('/signup', createAccount.signup); // send login info here
+app.get('/profile', profile.view); // send login info here
 
 app.get('/home', home.view); // redirected here after logging in
 app.get('/join/class', joinClass.view) // shows when user presses join
@@ -48,6 +54,8 @@ app.get('/class/:id/groups', classPage.viewGroups) // groups page
 app.get('/class/:id/group/:group', group.view); // view a specific group
 app.get('/class/:id/groups/create', createGroup.view); // create a group page
 app.get('/class/:id/groups/join', joinGroup.view); // list of gorups to join
+
+app.get('/class/:id/list', classPage.viewList) // feed page
 
 app.get('/class/:id/groups/:group', joinGroup.viewGroup); // view a group to join
 app.post('/requestToJoinGroup', joinGroup.join); // join the group

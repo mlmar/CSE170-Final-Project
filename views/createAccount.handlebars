@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Triton Friends </title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery.js"></script>
+  </head>
+
+  <body>
+    <div class="createAccount page">
+      <div class="flex-col subtitle">
+        <label> Create an Account </label>
+      </div>
+      <form class="create-form flex-col" method="POST" action="/signup">
+        <input type="text" placeholder="Name" name="name" required/>
+        <input type="text" placeholder="Username" name="username" required/>
+        <input type="password" placeholder="Password" name="password" required/>
+        <input type="number" placeholder="Graduating Year" name="year" required/>
+        <input type="text" placeholder="Major" name="major" required/>
+        <input type="submit" value="Sign Up"/>
+      </form>
+    </div>
+  </body>
+</html>

@@ -9,7 +9,7 @@
   --button-bg: rgb(233, 233, 233);
   --nav-bg: rgb(211, 211, 211);
 
-  --md-text: 1.3rem;
+  --md-text: 1.2rem;
 }
 
 
@@ -97,6 +97,39 @@ textarea:focus, input:focus{
   filter: invert(62%) sepia(77%) saturate(4857%) hue-rotate(162deg) brightness(95%) contrast(102%);
 }
 
+/* pre made styles */
+
+.flex {
+  display: flex;
+}
+
+.fill {
+  flex: 1 1;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.wrap > *.item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 48%;
+  height: 8rem;
+  margin-bottom: 1rem;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
 /************** default page layout **************/ 
 
 /* header for title and back button */
@@ -117,6 +150,11 @@ textarea:focus, input:focus{
 .header > *:nth-child(2) {
   flex-basis: 50%;
   width: 100%;
+}
+
+.header > .right {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .header .back-btn {
@@ -146,6 +184,13 @@ textarea:focus, input:focus{
   flex-basis: 85%;
 }
 
+.header.reverse.shrink {
+  flex-direction: row-reverse;
+}
+
+.header.reverse.shrink > *:nth-child(2) {
+  flex: 1 1;
+}
 
 .header.shrink .title {
   font-size: 1.5rem;
@@ -201,32 +246,6 @@ nav > *.selected {
   opacity: 1;
 }
 
-.flex {
-  display: flex;
-}
-
-.fill {
-  flex: 1 1;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.wrap {
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.wrap > *.item {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 48%;
-  height: 8rem;
-  margin-bottom: 1rem;
-}
-
 /************** logn layouts **************/
 
 .login {
@@ -243,8 +262,13 @@ nav > *.selected {
   font-size: 3rem;
 }
 
+.login > .login-form {
+  flex-basis: 40%;
+}
+
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=number] {
   padding: .8rem .5rem;
   border-radius: .5rem;
   border: solid rgb(75, 75, 75);
@@ -252,7 +276,9 @@ input[type=password] {
   margin-bottom: 1rem;
 }
 
-.login input[type=submit] {
+.login input[type=submit],
+.createAccount input[type=submit],
+.round-btn {
   border: none;
   font-weight: bold;
   font-size: 1rem;
@@ -263,7 +289,57 @@ input[type=password] {
   background: var(--icon-bg);
 }
 
+.login > a {
+  align-self: center;
+  text-decoration: underline;
+  color: gray;
+}
 
+
+/************** profile layouts **************/
+
+.profile main > span {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.profile main > span > * {
+  display: flex;
+  font-size: var(--md-text);
+}
+
+.profile main > span > *:first-child {
+  flex-basis: 15%;
+}
+
+.profile main > span > *:nth-child(2) {
+  flex-basis: 85%;
+}
+
+.profile .name label {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.profile .name {
+  box-shadow: 0px 2px 2px -2px rgb(14, 14, 14);
+  padding: 1rem 0;
+}
+
+
+/************** create account layouts **************/
+
+.createAccount {
+  padding: 3rem;
+  font-size: var(--md-text);
+  font-weight: bold;
+  text-align: center;
+}
+
+.createAccount > .create-form {
+  flex: 1 1;
+  justify-content: center;
+}
 
 /************** homepage layouts **************/
 

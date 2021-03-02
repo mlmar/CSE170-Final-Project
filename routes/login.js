@@ -1,12 +1,20 @@
+var users = require("../data/users.json");
+
 /*
   Receives username and password from login page
-  TODO: validation for wizard of oz login
-  Then redirects user to their home page
 
     {req} : contains username and password query
     {res} : sends back homepage
 */
 exports.login = function(req, res) {
-  req.session.username = req.body.username;
-  res.redirect('/home');
+  if(users[req.body.username]?.password == req.body.password) {
+    var user = users[req.body.username];
+    req.session.name = user.name;
+    req.session.username = user.username;
+    req.session.year = user.year;
+    req.session.major = user.major;
+    res.redirect('/home');
+  } else {
+    res.redirect('/')
+  }
 }
