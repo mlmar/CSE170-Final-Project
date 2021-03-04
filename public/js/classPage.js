@@ -1,4 +1,13 @@
 $(document).ready(function() {
+  $(".join-btn").click(handleJoinPopup);
+  $(".popup.join .no").click(handleJoinPopup);
+  $(".popup.join .yes").click(handleJoinYes);
+
+  $(".leave-btn").click(handleLeavePopup);
+  $(".popup.leave .no").click(handleLeavePopup);
+  $(".popup.leave .yes").click(handleLeaveYes);
+
+
   $(".post-btn").click(togglePost)
   $(".post-form .cancel").click(togglePost);
   $(".post-form .confirm").click(handleConfirmPost);
@@ -13,6 +22,35 @@ $(document).ready(function() {
 function togglePost() {
   $(".post-form").toggleClass("visible");
 }
+
+function handleJoinPopup() {
+  $(".popup.join").toggleClass("visible");
+}
+
+function handleJoinYes() {
+  var id = $(this).attr("id");
+  $.post("/joinClass", { id });
+  $(".join-btn").replaceWith(`<span class="leave-btn"> Leave </span>`);
+  $(".leave-btn").click(handleLeavePopup);
+
+  handleJoinPopup();
+}
+
+
+function handleLeavePopup() {
+  $(".popup.leave").toggleClass("visible");
+}
+
+function handleLeaveYes() {
+  var id = $(this).attr("id");
+  $.post("/leaveClass", { id });
+  $(".leave-btn").replaceWith(`<span class="join-btn"> Join </span>`);
+  $(".join-btn").click(handleJoinPopup);
+
+  handleLeavePopup();
+}
+
+
 
 function handleConfirmPost() {
   var userPost = {

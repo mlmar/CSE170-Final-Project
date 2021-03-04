@@ -6,10 +6,10 @@ var groups = require("../data/groups.json")
     {res} : server response
 */
 exports.view = function(req, res) {
+  var id = req.params.id;
   var user = req.session.username;
   var userGroups = groups.joined[user];
-
-  var showGroups = groups.example.filter(g => userGroups.indexOf(g) === -1);
+  var showGroups = groups.example.filter(g => userGroups.indexOf(g.id) === -1 && g.classURL === id);
 
   res.render('joinGroup', { groups: showGroups, id: req.params.id });
 }
@@ -23,7 +23,6 @@ exports.viewGroup = function(req, res) {
 exports.join = function(req, res) {
   var user = req.session.username;
   var groupID = req.body.id;
-  var groupToJoin = groups.example[groupID];
-  if(groups.joined[user].indexOf(groupToJoin) === -1)
-    groups.joined[user].push(groupToJoin);
+  groups.example[groupID].members.push(user);
+  groups.joined[user].push(groupID);
 }

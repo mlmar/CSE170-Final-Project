@@ -11,10 +11,11 @@ exports.login = function(req, res) {
     var user = users[req.body.username];
     req.session.name = user.name;
     req.session.username = user.username;
+    req.session.phone = user.phone;
     req.session.year = user.year;
     req.session.major = user.major;
     res.redirect('/home');
   } else {
-    res.redirect('/')
+    res.redirect('/incorrect')
   }
 }

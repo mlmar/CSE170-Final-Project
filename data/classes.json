@@ -1,42 +1,43 @@
 {
   "joined": {
-    
+    "demo": ["0"]
   },
   "classes": [
     {
       "number": "107a",
       "title": "COGS 107a",
-      "url": "0"
+      "url": "0",
+      "members": ["demo", "girl1", "girl2", "girl3", "girl4", "jofa", "kevwu", "jacky", "jacob125", "john25"]
     },
     {
       "number": "100",
       "title": "COGS 100",
-      "url": "1"
+      "url": "1",
+      "members": []
     },
     {
       "number": "108",
       "title": "COGS 108",
-      "url": "2"
+      "url": "2",
+      "members": []
     },
     {
       "number": "18",
       "title": "Math 18",
-      "url": "3"
+      "url": "3",
+      "members": []
     },
     {
       "number": "20a",
       "title": "Math 20a",
-      "url": "4"
+      "url": "4",
+      "members": []
     },
     {
       "number": "170",
       "title": "CSE 170",
-      "url": "5"
-    },
-    {
-      "number": "120",
-      "title": "Cogs 120",
-      "url": "6"
+      "url": "5",
+      "members": []
     }
   ]
 }

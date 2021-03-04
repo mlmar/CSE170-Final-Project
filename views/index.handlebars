@@ -15,11 +15,17 @@
         <label> TritonFriends </label>
         <label> Helping you survive college. </label>
       </div>
+
+      {{#if incorrect}}
+        <label class="incorrect"> Incorrect username or password! </label>
+      {{/if}}
+
       <form class="login-form flex-col" method="POST" action="/login">
         <input type="text" placeholder="Username" name="username"/>
         <input type="password" placeholder="Password" name="password"/>
         <input type="submit" value="Login"/>
       </form>
+
       <a href="/createAccount"> Create an Account </a>
     </div>
   </body>

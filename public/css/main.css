@@ -8,6 +8,8 @@
   --icon-bg: rgb(211, 211, 211);
   --button-bg: rgb(233, 233, 233);
   --nav-bg: rgb(211, 211, 211);
+  --pic-light: gray;
+  --pic-dark: rgb(75, 75, 75);
 
   --md-text: 1.2rem;
 }
@@ -148,8 +150,11 @@ textarea:focus, input:focus{
 
 .header > *:first-child,
 .header > *:nth-child(2) {
+  display: flex;
   flex-basis: 50%;
   width: 100%;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .header > .right {
@@ -165,8 +170,21 @@ textarea:focus, input:focus{
 
 .header .title {
   font-weight: bold; 
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   transition: font-size .2s ease-out;
+}
+
+.header .join-btn,
+.header .leave-btn {
+  display: flex;
+  padding-top: .08rem;
+  justify-content: center;
+  background: var(--post-bg);
+  height: 2rem;
+  padding: .2rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 2rem;
 }
 
 .header.shrink {
@@ -231,10 +249,12 @@ nav {
 
 nav > * {
   display: flex;
-  flex-basis: 50%;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: .5;
+  flex-basis: 50%;
+  font-size: .8rem;
 }
 
 nav > * > * {
@@ -287,12 +307,18 @@ input[type=number] {
   border-radius: 1rem;
   padding: .5rem;
   background: var(--icon-bg);
+  text-align: center;
 }
 
 .login > a {
   align-self: center;
   text-decoration: underline;
   color: gray;
+}
+
+.login > .incorrect {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 
@@ -455,8 +481,9 @@ input[type=number] {
   margin-bottom: 1rem;
 }
 
-.classPage .posts-list > .item > .name > .picture {
-  background: rgb(75, 75, 75);
+.picture {
+  display: flex;
+  background: var(--pic-dark);
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 2rem;
@@ -490,6 +517,48 @@ input[type=number] {
   border-radius: 2rem;
   background-position: center;
   background-size: 55%;
+}
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(128, 128, 128, 0.481);
+}
+
+.popup.visible {
+  display: flex;
+}
+
+.popup > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 12rem;
+  width: 90%;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: white;
+}
+
+.popup > div label {
+  font-weight: bold;
+  font-size: var(--md-text);
+}
+
+.popup > div span {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .comment-form,
@@ -600,13 +669,52 @@ input[type=number] {
   transform: rotate(45deg);
 }
 
+
+/************** groups page layouts **************/
+
+.listPage .member {
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.listPage .member .picture {
+  background: var(--pic-light);
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
 /************** join groups page layouts **************/
 
 .joinGroup .groups-list > .item {
+  display: flex;
+  align-items: center;
   font-size: 1.1rem;
 }
 
+.joinGroup .groups-list > .item > *:first-child {
+  flex-basis: 40%;
+}
+
+.joinGroup .circles {
+  display: flex;
+  overflow: hidden;
+}
+
+.joinGroup .circles .circle {
+  background: var(--icon-bg)
+}
+
 /************** request page layouts **************/
+
+.circle {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  background: rgb(255, 255, 255);
+  color: transparent;
+  border-radius: 2rem;
+}
+
 
 .requestGroup main {
   padding-left: 0 !important;
@@ -642,13 +750,68 @@ input[type=number] {
   background: white;
 }
 
+.requestGroup .info > .circles {
+  display: flex;
+  align-self: center;
+  width: 90%;
+  margin-bottom: 1rem;
+  justify-content: center;
+  overflow: hidden
+}
+
+.requestGroup .info > .circles > * {
+  margin: 0 .5rem;
+}
+
+
+
 
 /************** single group page layouts **************/
 
-.group main * {
-  margin-bottom: .8rem;
+.group main > * {
+  margin-bottom: 2rem;
 }
 
 .group h3 {
-  font-size: 1.1rem;
+  font-size: var(--md-text);
+  margin-bottom: 1rem;
+}
+
+
+.group .members-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.group .members-list > *{
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.group .members-list > * > .name {
+  font-weight: bold;
+  flex-basis: 35%;
+}
+
+.group .members-list > * > .picture {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: var(--pic-light)
+}
+
+/************** create group page layouts **************/
+
+.createGroup .group-form {
+  padding-bottom: 1rem;
+}
+
+.createGroup .group-form textarea {
+  padding: .8rem .5rem;
+  border-radius: .5rem;
+  border: solid rgb(75, 75, 75);
+  border-width: 1px;
+  height: 10rem;
+  margin-bottom: 1rem;
 }

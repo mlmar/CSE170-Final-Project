@@ -15,8 +15,16 @@
       <div class="classPage page">
 
           <div class="header">
-            <span> <a class="back-btn icon" href="/home"> </a> </span>
-            <label class="title" id={{url}}> {{title}} </label>
+            <span> 
+              <a class="back-btn icon" href="/home"> </a> </span>
+            <span> 
+              <label class="title" id={{url}}> {{title}} </label> 
+              {{#if joined}}
+                <span class="leave-btn"> Leave </span>
+              {{else}}
+                <span class="join-btn"> Join </span> 
+              {{/if}}
+            </span>
           </div>
 
           <main>
@@ -38,6 +46,20 @@
                   </span>
                 </a>
               {{/each}}
+            </div>
+
+            <div class="popup join">
+              <div>
+                <label class="prompt"> Add this class? </label>
+                <span> <button class="round-btn no"> No </button> <button class="round-btn yes" id={{url}}> Yes </button> </span>
+              </div>
+            </div>
+
+            <div class="popup leave">
+              <div>
+                <label class="prompt"> Leave this class? </label>
+                <span> <button class="round-btn no"> No </button> <button class="round-btn yes" id={{url}}> Yes </button> </span>
+              </div>
             </div>
 
             <div class="comment-form">
@@ -62,9 +84,9 @@
           </main>
 
           <nav>
-            <a href="/class/{{url}}" class="selected"> <span class="home-btn icon"> </span> </a>
-            <a href="/class/{{url}}/groups"> <span class="group-btn icon"> </span> </a>
-            <a href="/class/{{url}}/list"> <span class="group-btn icon"> </span> </a>
+            <a href="/class/{{url}}" class="selected"> <span class="home-btn icon"> </span> Home </a>
+            <a href="/class/{{url}}/groups"> <span class="group-btn icon"> </span> Groups </a>
+            <a href="/class/{{url}}/list"> <span class="group-btn icon"> </span> Class </a>
           </nav>
 
       </div>

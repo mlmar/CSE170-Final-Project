@@ -12,18 +12,30 @@
   <body>
       <div class="createGroup page">
 
-          <div class="header">
+          <div class="header" id="{{url}}">
             <span> <a class="back-btn icon" href="../groups"> </a> </span>
             <label class="title"> Create Study Group </label>
           </div>
 
           <main>
-            <form class="group-form">
-              <input autocomplete="off" type="text" placeholder="Group Name" name="name"/>
-              <input autocomplete="off" type="text" placeholder="Description" name="description"/>
-              <input autocomplete="off" type="text" placeholder="Contact Info" name="contact"/>
-              <input type="submit" value="Create"/>
+            <form class="group-form flex-col fill">
+              <div class="flex-col fill">
+                <input autocomplete="off" type="text" placeholder="Group Name" name="name" id="name"/>
+                <textarea placeholder="Group Description" name="description" id="description"></textarea>
+                <input autocomplete="off" type="text" placeholder="Contact Info" name="contact" id="contact"/>
+              </div>
+
+              <input class="round-btn" type="submit" value="Create"/>
             </form>
+
+
+            <div class="popup okay">
+              <div>
+                <label class="prompt"> Your group has been created! </label>
+                <span> <a class="round-btn" href="/class/{{url}}/groups"> Ok </a> </span>
+              </div>
+            </div>
+
 
           </main>
 

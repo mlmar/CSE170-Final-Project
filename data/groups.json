@@ -5,22 +5,22 @@
     {
       "name" : "The Gorls",
       "description" : "We’re in section A04 and meet once a week on Zoom to go over that week’s lectures and quiz. We’re very serious about studying regularly so be sure you want to commit to our weekly meeting if you want to join!",
-      "url": "",
-      "members": [],
+      "members": ["girl1", "girl2", "girl3", "girl4"],
+      "classURL" : "0",
       "id" : "0"
     },
     {
       "name" : "107A Best Gang",
       "description" : "We the best",
-      "url": "",
-      "members": [],
+      "members": ["jofa", "kevwu", "jacky"],
+      "classURL" : "0",
       "id" : "1"
     },
     {
       "name" : "Brain Gang",
       "description" : "We only study brains",
-      "url": "",
-      "members": [],
+      "members": ["jacob125", "john25"],
+      "classURL" : "0",
       "id" : "2"
     }
 

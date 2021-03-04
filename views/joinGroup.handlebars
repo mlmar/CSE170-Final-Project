@@ -20,7 +20,12 @@
             <div class="groups-list flex-col">
               {{#each groups}}
                 <a class="item" href="{{id}}"> 
-                  {{name}}
+                  <label> {{name}} </label>
+                  <span class="circles">
+                    {{#each members}}
+                      <span class="circle"> . </span>
+                    {{/each}}
+                  </span>
                 </a>
                 <br/>
               {{/each}}

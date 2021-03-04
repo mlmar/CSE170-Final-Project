@@ -1,7 +1,80 @@
 {
   "demo" : {
     "username": "demo",
-    "name" : "Jhon Smit",
+    "name" : "Demo Guy",
+    "phone": "123-456-6789",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "girl1" : {
+    "username": "girl1",
+    "name": "Kate",
+    "phone": "123-452-6729",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "girl2" : {
+    "username": "girl2",
+    "name": "Ann",
+    "phone": "123-552-1129",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "girl3" : {
+    "username": "girl3",
+    "name": "Mary",
+    "phone": "123-420-1144",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "girl4" : {
+    "username": "girl4",
+    "name": "Sam",
+    "phone": "123-433-1331",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "jofa" : {
+    "username": "jofa",
+    "name": "Joseph Farsi",
+    "phone": "123-900-1321",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "kevwu" : {
+    "username": "kevwu",
+    "name": "Kevin Wu",
+    "phone": "123-123-1231",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "jacky" : {
+    "username": "jacky",
+    "name": "Jacky",
+    "phone": "123-432-4321",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "jacob125" : {
+    "username": "jacob125",
+    "name": "Jacob",
+    "phone": "123-222-4444",
+    "major": "Cognitive Science w/ a Specialization in Design and Interaction",
+    "year": "2022",
+    "password" : "123"
+  },
+  "john25" : {
+    "username": "john25",
+    "name": "John",
+    "phone": "123-222-1111",
     "major": "Cognitive Science w/ a Specialization in Design and Interaction",
     "year": "2022",
     "password" : "123"

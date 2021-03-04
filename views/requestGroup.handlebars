@@ -21,6 +21,11 @@
             <div class="info flex-col fill">
               <label class="name" id={{id}}> {{name}} </label>
               <p> {{description}} </p>
+              <span class="circles">
+                {{#each members}}
+                  <span class="circle"> . </span>
+                {{/each}}
+              </span>
               <button class="join-btn" id="join"> Join </button>
             </div>
           </main>

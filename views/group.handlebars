@@ -18,12 +18,22 @@
 
           <main>
             <div>
-              <h3> Description </h3> 
+              <h3> Description: </h3> 
               <p> {{group.description}} </p>
             </div>
 
-            <div>
-              <h3> Contact </h3>
+            <div class="flex-col">
+              <h3> Contact: </h3>
+
+              <div class="members-list">
+                {{#each members}}
+                  <div class="item">
+                    <span class="picture"></span>
+                    <label class="name"> {{name}} </label>
+                    <label> {{phone}} </label>
+                  </div>
+                {{/each}}
+              </div>
             </div>
 
           </main>

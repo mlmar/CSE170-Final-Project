@@ -11,7 +11,7 @@
   </head>
 
   <body>
-      <div class="groupsPage page">
+      <div class="listPage page">
 
           <div class="header">
             <span></span>
@@ -19,13 +19,18 @@
           </div>
 
           <main>
-
+            {{#each members}}
+              <div class="member flex">
+                <span class="picture"></span>
+                <label> {{name}} </label>
+              </div>
+            {{/each}}
           </main>
 
           <nav>
-            <a href="/class/{{url}}"> <span class="home-btn icon"> </span> </a>
-            <a href="/class/{{url}}/groups" > <span class="group-btn icon"> </span> </a>
-            <a href="/class/{{url}}/list" class="selected"> <span class="group-btn icon"> </span> </a>
+            <a href="/class/{{url}}"> <span class="home-btn icon"> </span> Home </a>
+            <a href="/class/{{url}}/groups" > <span class="group-btn icon"> </span> Groups </a>
+            <a href="/class/{{url}}/list" class="selected"> <span class="group-btn icon"> </span> Class </a>
           </nav>
 
       </div>

@@ -4,5 +4,12 @@ $(document).ready(function() {
 
 function handleSubmit(e) {
   e.preventDefault();
-  alert("Creating groups not fully implemented yet.");
+  $.post('/createGroup', { 
+    url : $(".header").attr('id'),
+    name : $("#name").val(),
+    description : $("#description").val(),
+    contact : $("#contact").val()
+  }, function() {
+    $(".popup").toggleClass("visible");
+  });
 }
