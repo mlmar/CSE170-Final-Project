@@ -10,7 +10,20 @@ exports.signup = function(req, res) {
   req.session.year = req.body.year;
   req.session.major = req.body.major;
 
-  users[req.session.username] = req.body;
+  if(!users[req.body.username]) {
+    users[req.session.username] = req.body;
+    res.redirect('/')
+  } else {
+    res.redirect('/createAccount');
+  }
 
-  res.redirect('/')
+}
+
+exports.checkUsername = function(req, res) {
+  var username = req.body.username;
+  if(users[username]) {
+    res.send({ taken : true });
+  } else {
+    res.send({ taken : false });
+  }
 }

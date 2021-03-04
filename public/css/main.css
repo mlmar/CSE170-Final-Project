@@ -27,8 +27,6 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   transition: 
-    background .5s ease,
-    color .5s ease,
     padding .5s ease,
     margin .5s ease;
 }
@@ -130,6 +128,10 @@ textarea:focus, input:focus{
 
 .bold {
   font-weight: bold;
+}
+
+.light {
+  background: var(--button-bg) !important;
 }
 
 /************** default page layout **************/ 
@@ -358,8 +360,21 @@ input[type=number] {
 .createAccount {
   padding: 3rem;
   font-size: var(--md-text);
-  font-weight: bold;
   text-align: center;
+}
+
+.createAccount > .subtitle {
+  font-weight: bold;
+}
+
+.createAccount .taken {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: red;
+}
+
+.createAccount .hidden {
+  visibility: hidden;
 }
 
 .createAccount > .create-form {
@@ -581,8 +596,7 @@ input[type=number] {
   z-index: 5;
 }
 
-.comment-form > .cancel,
-.post-form > .cancel {
+.cancel {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -814,4 +828,70 @@ input[type=number] {
   border-width: 1px;
   height: 10rem;
   margin-bottom: 1rem;
+}
+
+.createGroup .group-form > div {
+  overflow: auto;
+}
+
+.createGroup .item {
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .5rem;
+}
+
+.createGroup .picture {
+  background: var(--icon-bg);
+  height: 2rem;
+  width: 2rem;
+}
+
+.createGroup .members-btn {
+  margin-bottom: 1rem;
+}
+
+.members-select {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: gray;
+  visibility: hidden;
+  z-index: -1;
+  padding: .5rem;
+  font-weight: bold;
+}
+
+.members-select.visible {
+  visibility: visible;
+  z-index: 3;
+}
+
+.members-select .hidden {
+  visibility: hidden;
+  position: fixed;
+  z-index: -2;
+}
+
+.members-select .cancel {
+  margin-bottom: 1rem;
+}
+
+.members-select .members-list {
+  overflow: auto;
+}
+
+input[type=checkbox] {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 2rem;
+  appearance: none;
+  border: var(--icon-bg) solid;
+  border-width: 1px;
+}
+
+input[type=checkbox]:checked {
+  background-color: white;
 }

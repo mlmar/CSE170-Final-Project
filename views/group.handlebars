@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/group.js"></script>
   </head>
 
   <body>
@@ -13,7 +14,7 @@
 
           <div class="header">
             <span> <a class="back-btn icon" href="../groups"> </a> </span>
-            <label class="title"> {{group.name}} </label>
+            <span> <label class="title"> {{group.name}} </label> <span class="leave-btn"> Leave </span> </span>
           </div>
 
           <main>
@@ -33,6 +34,20 @@
                     <label> {{phone}} </label>
                   </div>
                 {{/each}}
+              </div>
+            </div>
+
+            <div class="popup leave">
+              <div>
+                <label class="prompt"> Leave this group? </label>
+                <span> <button class="round-btn no"> No </button> <button class="round-btn yes" id={{group.id}}> Yes </button> </span>
+              </div>
+            </div>
+
+            <div class="popup okay">
+              <div>
+                <label class="prompt"> You have left this group. </label>
+                <span> <a class="round-btn" href="../groups"> Ok </a> </span>
               </div>
             </div>
 

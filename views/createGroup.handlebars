@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/scroll.js"></script>
     <script src="/js/createGroup.js"></script>
   </head>
 
@@ -20,14 +21,24 @@
           <main>
             <form class="group-form flex-col fill">
               <div class="flex-col fill">
-                <input autocomplete="off" type="text" placeholder="Group Name" name="name" id="name"/>
-                <textarea placeholder="Group Description" name="description" id="description"></textarea>
-                <input autocomplete="off" type="text" placeholder="Contact Info" name="contact" id="contact"/>
+                <input autocomplete="off" type="text" placeholder="Group Name" name="name" id="name" required/>
+                <textarea placeholder="Group Description" name="description" id="description" required></textarea>
+                <input autocomplete="off" type="text" placeholder="Contact Info, Slack/Discord URL, etc." name="contact" id="contact" required/>
+                <div class="flex-col" id="added-members"></div>
+                <span class="members-btn round-btn light"> Add Members </span>
               </div>
-
               <input class="round-btn" type="submit" value="Create"/>
             </form>
 
+            <div class="members-select flex-col">
+              <button class="cancel"> X </button>
+              <input autocomplete="off" type="text" placeholder="Search name" name="search" id="search"/>
+              <form class="members-form flex-col fill">
+                <div class="members-list flex-col fill">
+                </div>
+                <input class="round-btn light" type="submit" value="Add"/>
+              </form>
+            </div>
 
             <div class="popup okay">
               <div>

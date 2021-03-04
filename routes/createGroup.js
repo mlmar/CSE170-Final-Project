@@ -14,10 +14,12 @@ exports.create = function(req, res) {
   var description = req.body.description;
   var contact = req.body.contact;
   var id = `${groups.example.length}`;
-  var members = [];
+  var members = req.body.members;
 
   members.push(user);
-  groups.joined[user].push(id);
+  members.forEach(function(m) {
+    groups.joined[m].push(id);
+  })
 
   var group = { name, description, contact, id, members, classURL : url }
   groups.example.push(group);

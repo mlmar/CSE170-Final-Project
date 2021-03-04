@@ -39,6 +39,7 @@ app.get('/', index.view); // login form page
 app.get('/incorrect', index.viewIncorrect); // login form page
 app.post('/login', login.login); // send login info here
 app.get('/createAccount', createAccount.view); // send login info here
+app.post('/checkUser', createAccount.checkUsername) // check if username taken
 app.post('/signup', createAccount.signup); // send login info here
 app.get('/profile', profile.view); // send login info here
 
@@ -51,11 +52,13 @@ app.get('/search', joinClass.search) // search route with query
 app.get('/class/:id', classPage.view) // feed page
 app.post('/sendPost', classPage.post) // post to a class
 
-app.get('/class/:id/groups', classPage.viewGroups) // groups page
 app.get('/class/:id/group/:group', group.view); // view a specific group
+app.post('/leaveGroup', group.leaveGroup); // leave specific group
+app.get('/class/:id/groups', classPage.viewGroups) // groups page
 app.get('/class/:id/groups/create', createGroup.view); // create a group page
 app.post('/createGroup', createGroup.create); // create a group
 app.get('/class/:id/groups/join', joinGroup.view); // list of gorups to join
+app.get('/class/:id/members', classPage.members);
 
 app.get('/class/:id/list', classPage.viewList) // feed page
 

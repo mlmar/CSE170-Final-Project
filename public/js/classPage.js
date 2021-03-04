@@ -19,10 +19,8 @@ $(document).ready(function() {
   $(".up-btn").click(toggleLike);
 })
 
-function togglePost() {
-  $(".post-form").toggleClass("visible");
-}
 
+// shows up when we press join class
 function handleJoinPopup() {
   $(".popup.join").toggleClass("visible");
 }
@@ -36,7 +34,7 @@ function handleJoinYes() {
   handleJoinPopup();
 }
 
-
+// shows up when we press leave class
 function handleLeavePopup() {
   $(".popup.leave").toggleClass("visible");
 }
@@ -50,7 +48,10 @@ function handleLeaveYes() {
   handleLeavePopup();
 }
 
-
+// handle pressing "post"
+function togglePost() {
+  $(".post-form").toggleClass("visible");
+}
 
 function handleConfirmPost() {
   var userPost = {
@@ -76,21 +77,25 @@ function handleConfirmPost() {
     </a>
   `
 
-  $(".posts-list").prepend(newPost);
+  $(".posts-list").prepend(newPost); // most recent posts appear first
+  //$(".posts-list").append(newPost) // most recent posts appear last
 
   $.post('/sendPost', { id, userPost});
   togglePost();
 }
 
+// toggle comment view
 function toggleComment() {
   $(".comment-form").toggleClass("visible");
 }
 
+// handle commenting function TODO
 function handleComment() {
   alert("Comment function not implemented yet.");
   toggleComment();
 }
 
+// like a comment
 function toggleLike() {
   $(this).toggleClass("highlight");
 }

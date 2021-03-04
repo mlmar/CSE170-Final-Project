@@ -11,11 +11,8 @@ var groups = require("../data/groups.json");
 exports.view = function(req, res) {
   var id = req.params.id;
   var c = classes.classes[id];
-
   var user = req.session.username;
-  var userClassIds = classes.joined[user];
-  var joined = userClassIds.indexOf(c.url) !== -1;
-  console.log(joined);
+  var joined = classes.joined[user].indexOf(c.url) !== -1;
 
   res.render('classPage', {
     title: c.title,
@@ -26,6 +23,7 @@ exports.view = function(req, res) {
   });
 }
 
+// render groups
 exports.viewGroups = function(req, res) {
   var user = req.session.username;
   if(!groups.joined[user]) {
@@ -33,7 +31,7 @@ exports.viewGroups = function(req, res) {
   }
 
   var id = req.params.id;
-  var userGroups = groups.joined[user].length > 0 ? groups.example.filter(g => groups.joined[user].indexOf(g.id) !== -1 && g.classURL === id) : null;
+  var userGroups = groups.joined[user].length > 0 ? getUserClassGroups(user, id) : null;
 
   res.render('groups', {
     title: classes.classes[id].title,
@@ -42,6 +40,7 @@ exports.viewGroups = function(req, res) {
   });
 }
 
+// route to make a post to the class feed
 exports.post = function(req, res) {
   var id = req.body.id;
   var selectedClass = classes.classes[id].title;
@@ -52,13 +51,38 @@ exports.post = function(req, res) {
   posts[selectedClass].unshift(userPost);
 }
 
+// render members page
 exports.viewList = function(req, res) {
   var id = req.params.id;
-
-  var members = classes.classes[id].members.map(m => users[m]);
-
   res.render('list', {
     url: classes.classes[id].url,
-    members: members
+    members: getMembers(id)
   });
+}
+
+// function to get members from a fetch request
+exports.members = function(req,res) {
+  var id = req.params.id;
+  var user = req.session.username;
+  var members = getMembers(id, user);
+  console.log(members);
+  res.send({ members : members});
+}
+
+
+
+function getUserClassGroups(user, id) {
+ return groups.example.filter(g => groups.joined[user].indexOf(g.id) !== -1 && g.classURL === id);
+}
+
+function getMembers(id, user) {
+  var userIDS = []
+  
+  classes.classes[id].members.forEach(m => {
+    if(m !== user) {
+      userIDS.push(users[m]) 
+    }
+  });
+
+  return userIDS;
 }
