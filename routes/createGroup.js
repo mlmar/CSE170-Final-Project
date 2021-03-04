@@ -13,7 +13,7 @@ exports.create = function(req, res) {
   var name = req.body.name;
   var description = req.body.description;
   var contact = req.body.contact;
-  var id = groups.example.length;
+  var id = `${groups.example.length}`;
   var members = [];
 
   members.push(user);
