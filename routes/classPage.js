@@ -19,6 +19,7 @@ exports.view = function(req, res) {
     url: c.url,
     posts: posts[c.title],
     user: req.session.username,
+    displayName: req.session.name,
     joined: joined
   });
 }
