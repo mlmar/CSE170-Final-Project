@@ -51,7 +51,7 @@ exports.post = function(req, res) {
 
   var postID = posts[selectedClass].length + "";
 
-  var userPost = { name: req.session.username, text: req.body.userPost.text, id: postID, comments : [] };
+  var userPost = { name: req.session.name, text: req.body.userPost.text, id: postID, comments : [] };
   posts[selectedClass].push(userPost);
 
   res.send({ postID:  postID});
