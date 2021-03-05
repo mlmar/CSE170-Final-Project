@@ -14,7 +14,7 @@ exports.create = function(req, res) {
   var description = req.body.description;
   var contact = req.body.contact;
   var id = `${groups.example.length}`;
-  var members = req.body.members;
+  var members = req.body.addedMembers ? req.body.addedMembers : [];
 
   members.push(user);
   members.forEach(function(m) {

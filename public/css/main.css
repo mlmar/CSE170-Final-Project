@@ -566,6 +566,7 @@ input[type=number] {
 
 .classPage .posts-list {
   flex-direction: column-reverse;
+  justify-content: flex-end;
 }
 
 .classPage .posts-list > .item,

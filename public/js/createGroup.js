@@ -1,5 +1,10 @@
 var url = null;
 
+var all;
+var filtered;
+var addedMembers;
+var addedMemberNames;
+
 $(document).ready(function() {
   $(".group-form").submit(handleSubmit);
   $(".members-btn").click(openMembers);
@@ -7,6 +12,9 @@ $(document).ready(function() {
   $(".cancel").click(closeMembers);
   $("#search").on('input', handleSearch);
   
+  addedMembers = [];
+  addedMemberNames = [];
+
   url = $(".header").attr("id");
 
 
@@ -18,21 +26,22 @@ $(document).ready(function() {
 
 })
 
-var all;
-var filtered;
-var addedMembers = [];
-var addedMemberNames = [];
-
 
 function handleSubmit(e) {
-  e.preventDefault();
-  $.post('/createGroup', { 
+  console.log(addedMembers);
+
+  var group = {
     url : url,
     name : $("#name").val(),
     description : $("#description").val(),
     contact : $("#contact").val(),
-    members : addedMembers
-  }, function() {
+    addedMembers : addedMembers
+  }
+
+  console.log(group);
+
+  e.preventDefault();
+  $.post('/createGroup', group, function() {
     $(".popup").toggleClass("visible");
   });
 }
