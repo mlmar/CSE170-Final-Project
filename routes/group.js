@@ -17,6 +17,10 @@ exports.leaveGroup = function(req, res) {
   groups.joined[user] = groups.joined[user].filter(i => i !== groupID); 
   groups.example[groupID].members = groups.example[groupID].members.filter(member => member !== user);
 
+  if(groups.example[groupID].members.length === 0) {
+    groups.example = groups.example.filter(g => g.id !== groupID);
+  }
+
   res.send({ finished : true });
 }
 
