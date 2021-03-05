@@ -12,8 +12,8 @@
   <body>
     <div class="login page">
       <div class="flex-col title">
+        <img src="/css/icons/Smiley.png" width="100" height="100"/>
         <label> TritonFriends </label>
-        <label> Helping you survive college. </label>
       </div>
 
       {{#if incorrect}}
@@ -23,7 +23,7 @@
       <form class="login-form flex-col" method="POST" action="/login">
         <input type="text" placeholder="Username" name="username"/>
         <input type="password" placeholder="Password" name="password"/>
-        <input type="submit" value="Login"/>
+        <input class="dark-btn" type="submit" value="Login"/>
       </form>
 
       <a href="/createAccount"> Create an Account </a>

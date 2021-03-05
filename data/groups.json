@@ -16,6 +16,7 @@
       "description" : "We’re in section A04 and meet once a week on Zoom to go over that week’s lectures and quiz. We’re very serious about studying regularly so be sure you want to commit to our weekly meeting if you want to join!",
       "members": ["girl1", "girl2", "girl3", "girl4"],
       "classURL" : "0",
+      "contact": "https://discord.gg/DPYafcE",
       "id" : "0"
     },
     {
@@ -23,6 +24,7 @@
       "description" : "We the best",
       "members": ["jofa", "kevwu", "jacky"],
       "classURL" : "0",
+      "contact": "https://discord.gg/DPYafcE",
       "id" : "1"
     },
     {
@@ -30,6 +32,7 @@
       "description" : "We only study brains",
       "members": ["jacob125", "john25"],
       "classURL" : "0",
+      "contact": "https://discord.gg/DPYafcE",
       "id" : "2"
     }
 

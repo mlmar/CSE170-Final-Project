@@ -23,27 +23,27 @@
               <div class="flex-col fill">
                 <input autocomplete="off" type="text" placeholder="Group Name" name="name" id="name" required/>
                 <textarea placeholder="Group Description" name="description" id="description" required></textarea>
-                <input autocomplete="off" type="text" placeholder="Contact Info, Slack/Discord URL, etc." name="contact" id="contact" required/>
+                <input autocomplete="off" type="text" placeholder="Link (Discord, Slack, Etc.)" name="contact" id="contact" required/>
                 <div class="flex-col" id="added-members"></div>
-                <span class="members-btn round-btn light"> Add Members </span>
+                <span class="members-btn dark-btn light"> Add Members </span>
               </div>
-              <input class="round-btn" type="submit" value="Create"/>
+              <input class="dark-btn long" type="submit" value="Create"/>
             </form>
 
             <div class="members-select flex-col">
-              <button class="cancel"> X </button>
+              <button class="cancel clear-btn"></button>
               <input autocomplete="off" type="text" placeholder="Search name" name="search" id="search"/>
               <form class="members-form flex-col fill">
                 <div class="members-list flex-col fill">
                 </div>
-                <input class="round-btn light" type="submit" value="Add"/>
+                <input class="dark-btn light" type="submit" value="Add"/>
               </form>
             </div>
 
             <div class="popup okay">
               <div>
                 <label class="prompt"> Your group has been created! </label>
-                <span> <a class="round-btn" href="/class/{{url}}/groups"> Ok </a> </span>
+                <span> <a class="dark-btn" href="/class/{{url}}/groups"> Ok </a> </span>
               </div>
             </div>
 

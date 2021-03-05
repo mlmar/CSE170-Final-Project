@@ -5,9 +5,11 @@
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet"/>
+    <script>
+      var id = "{{url}}";
+    </script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/scroll.js"></script>
-    <script> var id="{{url}}"; </script>
     <script src="/js/classPage.js"></script>
   </head>
 
@@ -30,7 +32,7 @@
           <main>
             <div class="posts-list flex-col fill">
               {{#each posts}}
-                <a class="item"> 
+                <span class="item"> 
                   <span class="name">
                     <span class="picture"></span>
                     <label> {{name}} </label>
@@ -38,55 +40,47 @@
                   <p class="text"> {{text}} </p>
                   <br/>
                   <span class="button-panel">
-                    <span class="up-btn icon"> </span>
-                    <span class="flex comment-span"> 
-                      <span class="comment-btn icon"> </span>  
-                      <label> Comment </label> 
-                    </span>
+                    {{!-- <span class="up-btn icon"> </span> --}}
+                    <span></span> 
+                    <a class="flex comment-span" href="/class/{{../url}}/posts/{{id}}"> 
+                      <span class="comment-btn icon"> </span>
+                      <span> Comment </span> 
+                    </a>
                   </span>
-                </a>
+                </span>
               {{/each}}
             </div>
 
             <div class="popup join">
               <div>
                 <label class="prompt"> Add this class? </label>
-                <span> <button class="round-btn no"> No </button> <button class="round-btn yes" id={{url}}> Yes </button> </span>
+                <span> <button class="dark-btn no"> No </button> <button class="dark-btn yes" id={{url}}> Yes </button> </span>
               </div>
             </div>
 
             <div class="popup leave">
               <div>
                 <label class="prompt"> Leave this class? </label>
-                <span> <button class="round-btn no"> No </button> <button class="round-btn yes" id={{url}}> Yes </button> </span>
+                <span> <button class="dark-btn no"> No </button> <button class="dark-btn yes" id={{url}}> Yes </button> </span>
               </div>
             </div>
 
-            <div class="comment-form">
-              <button class="cancel"> X </button>
-              <textarea placeholder="Comment something here..."></textarea>
-              <span>
-                <button class="confirm" id={{user}}> Comment </button>
-              </span>
-            </div>
-
-
             <div class="post-form">
-              <button class="cancel"> X </button>
+              <button class="cancel clear-btn"> </button>
               <textarea placeholder="Say something here..."></textarea>
               <span>
-                <button class="confirm" id={{user}}> Post </button>
+                <button class="confirm dark-btn light" id={{user}}> Post </button>
               </span>
             </div>
 
-            <button class="post-btn"> </button>
+            <button class="floating-btn"> <span class="post-btn"> </span> </button>
 
           </main>
 
           <nav>
             <a href="/class/{{url}}" class="selected"> <span class="home-btn icon"> </span> Home </a>
             <a href="/class/{{url}}/groups"> <span class="group-btn icon"> </span> Groups </a>
-            <a href="/class/{{url}}/list"> <span class="group-btn icon"> </span> Class </a>
+            <a href="/class/{{url}}/list"> <span class="class-btn icon"> </span> Class </a>
           </nav>
 
       </div>

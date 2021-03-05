@@ -19,3 +19,16 @@ exports.leaveGroup = function(req, res) {
 
   res.send({ finished : true });
 }
+
+exports.updateMembers = function(req, res) {
+  var groupID = req.body.groupID;
+  var addedMembers = req.body.addedMembers;
+
+  addedMembers.forEach(element => {
+    groups.example[groupID].members.push(element);
+    groups.joined[element].push(groupID);
+  });
+
+  var members = groups.example[groupID].members.map(m => users[m]);
+  res.send({ members : members})
+}

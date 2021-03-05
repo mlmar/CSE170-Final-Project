@@ -11,10 +11,6 @@ $(document).ready(function() {
   $(".post-btn").click(togglePost)
   $(".post-form .cancel").click(togglePost);
   $(".post-form .confirm").click(handleConfirmPost);
-  
-  $(".comment-span").click(toggleComment);
-  $(".comment-form .cancel").click(toggleComment);
-  $(".comment-form .confirm").click(handleComment);
 
   $(".up-btn").click(toggleLike);
 })
@@ -26,9 +22,8 @@ function handleJoinPopup() {
 }
 
 function handleJoinYes() {
-  var id = $(this).attr("id");
   $.post("/joinClass", { id });
-  $(".join-btn").replaceWith(`<span class="leave-btn"> Leave </span>`);
+  $(".join-btn").replaceWith(`<span class="dark-btn leave-btn"> Leave </span>`);
   $(".leave-btn").click(handleLeavePopup);
 
   handleJoinPopup();
@@ -40,9 +35,8 @@ function handleLeavePopup() {
 }
 
 function handleLeaveYes() {
-  var id = $(this).attr("id");
   $.post("/leaveClass", { id });
-  $(".leave-btn").replaceWith(`<span class="join-btn"> Join </span>`);
+  $(".leave-btn").replaceWith(`<span class="dark-btn join-btn"> Join </span>`);
   $(".join-btn").click(handleJoinPopup);
 
   handleLeavePopup();
@@ -55,44 +49,34 @@ function togglePost() {
 
 function handleConfirmPost() {
   var userPost = {
-    name: $(".confirm").attr("id"),
+    name: $(this).attr('id'),
     text: $(".post-form textarea").val()
   }
 
-  var newPost = `
-    <a class="item"> 
-      <span class="name">
-        <span class="picture"></span>
-        <label> ${userPost.name} </label>
-      </span>
-      <p class="text"> ${userPost.text} </p>
-      <br/>
-      <span class="button-panel">
-        <span class="up-btn icon"> </span>
-        <span class="flex"> 
-          <span class="comment-btn icon"> </span>  
-          <label> Comment </label> 
+  $.post('/sendPost', { id, userPost}, function(res) {
+    var newPost = `
+      <span class="item"> 
+        <span class="name">
+          <span class="picture"></span>
+          <label> ${userPost.name} </label>
+        </span>
+        <p class="text"> ${userPost.text} </p>
+        <br/>
+        <span class="button-panel">
+          <span></span>
+          <a class="flex comment-span" href="/class/${id}/posts/${res.postID}"> 
+            <span class="comment-btn icon"> </span>
+            <span> Comment </span> 
+          </a>
         </span>
       </span>
-    </a>
-  `
+    `
 
-  $(".posts-list").prepend(newPost); // most recent posts appear first
-  //$(".posts-list").append(newPost) // most recent posts appear last
-
-  $.post('/sendPost', { id, userPost});
+    // $(".posts-list").prepend(newPost); // most recent posts appear first
+    $(".posts-list").append(newPost) // most recent posts appear last
+    $(".post-form textarea").val("");
+  });
   togglePost();
-}
-
-// toggle comment view
-function toggleComment() {
-  $(".comment-form").toggleClass("visible");
-}
-
-// handle commenting function TODO
-function handleComment() {
-  alert("Comment function not implemented yet.");
-  toggleComment();
 }
 
 // like a comment

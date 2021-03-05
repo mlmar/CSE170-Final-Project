@@ -44,11 +44,36 @@ exports.viewGroups = function(req, res) {
 exports.post = function(req, res) {
   var id = req.body.id;
   var selectedClass = classes.classes[id].title;
-  var userPost = { name: req.session.username, text: req.body.userPost.text };
+  
   if(!posts[selectedClass]) {
     posts[selectedClass] = [];
   }
-  posts[selectedClass].unshift(userPost);
+
+  var postID = posts[selectedClass].length + "";
+
+  var userPost = { name: req.session.username, text: req.body.userPost.text, id: postID, comments : [] };
+  posts[selectedClass].push(userPost);
+
+  res.send({ postID:  postID});
+}
+
+exports.comment = function(req, res) {
+  var id = req.body.id;
+  var postID = req.body.postID;
+  var text = req.body.text;
+
+  var c = classes.classes[id].title;
+  posts[c][postID].comments.push({ name : req.session.name, text: text})
+
+  res.send({ finished : true });
+}
+
+exports.viewPost = function(req, res) {
+  var id = req.params.id;
+  var postID = req.params.postID;
+  var c = classes.classes[id].title;
+
+  res.render('postThread', { url : id, post : posts[c][postID], displayName: req.session.name });
 }
 
 // render members page
@@ -65,7 +90,23 @@ exports.members = function(req,res) {
   var id = req.params.id;
   var user = req.session.username;
   var members = getMembers(id, user);
-  console.log(members);
+  res.send({ members : members});
+}
+
+// function to get members from a post request, filtering out specified usernames
+exports.filterMembers = function(req,res) {
+  var id = req.params.id;
+  var groupID = req.body.groupID;
+  var user = req.session.username;
+  var members = getMembers(id, user);
+
+
+  var groupMembers = groups.example[groupID].members;
+
+  console.log(groupMembers);
+
+  members = members.filter(m => groupMembers.indexOf(m.username) === -1);
+
   res.send({ members : members});
 }
 

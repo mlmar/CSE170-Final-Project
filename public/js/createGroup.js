@@ -9,11 +9,13 @@ $(document).ready(function() {
   
   url = $(".header").attr("id");
 
+
   $.get(`/class/${url}/members`, (res) => { 
-    all = res.members;
+    all = res.members
     filtered = all;
     updateList(all)
   });
+
 })
 
 var all;
@@ -68,11 +70,12 @@ function handleAddMembers(e) {
     addedMembers.push(val);
     var name = $(`#${val}-label`).text();
 
-      $("#added-members").append(`
+      $(".current-members-list").append(`
         <span class="flex item">
-          <span class="picture">
-          </span>
-          <label class="name flex fill" "> ${name} </label>
+          <div class="item">
+            <span class="picture"></span>
+            <label class="name"> ${name} </label>
+          </div>
         </span>
       `)
   })

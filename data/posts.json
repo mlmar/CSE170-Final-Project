@@ -2,19 +2,37 @@
   "COGS 107a": [
     {
       "name": "King Henry XIII",
-      "text": "I'm not sure how to format my lab report. Can anyone help me out?"
+      "text": "I'm not sure how to format my lab report. Can anyone help me out?",
+      "comments": [
+        { "name" : "Jim", "text": "Title, intro, methods, procedure, results, discussion, conclusion" }
+      ],
+      "id": "0"
     },
     {
       "name": "Joe",
-      "text": "Am I doing 3a right?"
+      "text": "Am I doing 3a right?",
+      "comments": [
+        { "name" : "Jim", "text": "What amplitude did you run it at?" },
+        { "name" : "Jhon", "text": "Try lowering k concentration" }
+      ],
+      "id": "1"
     },
     {
       "name": "Jhon Smit",
-      "text": "Can someone give me a hint on number 2?"
+      "text": "Can someone give me a hint on number 2?",
+      "comments": [
+        { "name" : "Jhon", "text": "Nvm figured it out" }
+      ],
+      "id": "2"
     },
     {
       "name": "Jim",
-      "text": "How do we re-render pages in express?"
+      "text": "How do we re-render pages in express?",
+      "comments": [
+        { "name" : "Sam", "text": "res.render()" },
+        { "name" : "Sam", "text": "don't forget to set up the route in app.js" }
+      ],
+      "id": "3"
     }
   ]
 }

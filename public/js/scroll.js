@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function handleScroll() {
   var scrollPosition = $(this).scrollTop();
-  if(scrollPosition > 80) {
+  if(scrollPosition > 40) {
     $(".header").addClass("shrink");
   } else {
     $(".header").removeClass("shrink");

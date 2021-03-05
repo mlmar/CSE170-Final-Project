@@ -51,6 +51,8 @@ app.get('/search', joinClass.search) // search route with query
 
 app.get('/class/:id', classPage.view) // feed page
 app.post('/sendPost', classPage.post) // post to a class
+app.post('/sendComment', classPage.comment) // post to a class
+app.get('/class/:id/posts/:postID', classPage.viewPost) // view post information
 
 app.get('/class/:id/group/:group', group.view); // view a specific group
 app.post('/leaveGroup', group.leaveGroup); // leave specific group
@@ -59,6 +61,8 @@ app.get('/class/:id/groups/create', createGroup.view); // create a group page
 app.post('/createGroup', createGroup.create); // create a group
 app.get('/class/:id/groups/join', joinGroup.view); // list of gorups to join
 app.get('/class/:id/members', classPage.members);
+app.post('/class/:id/filterMembers', classPage.filterMembers);
+app.post('/updateMembers', group.updateMembers);
 
 app.get('/class/:id/list', classPage.viewList) // feed page
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> TritonFriends </title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet"/>
+    <script>
+      var displayName = "{{displayName}}";
+      var url = "{{url}}";
+    </script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/postThread.js"></script>
+  </head>
+
+  <body>
+      <div class="thread page">
+
+          <div class="header shrink">
+            <span> <a class="back-btn icon" href="/class/{{url}}"> </a> </span>
+            <span> </span>
+          </div>
+
+          <main>
+              <div class="starter panel flex-col"> 
+                <span class="name">
+                  <span class="picture"></span>
+                  <label> {{post.name}} </label>
+                </span>
+                <p class="text"> {{post.text}} </p>
+              </div>
+
+              <div class="comment-list flex-col">
+                {{#each post.comments}}
+                  <div class="panel flex-col">
+                    <span class="name">
+                      <span class="picture"></span>
+                      <label> {{name}} </label>
+                    </span>
+                    <p class="text"> {{text}} </p>
+                  </div>
+                {{/each}}
+              </div>
+
+              <form class="panel comment-form" id="{{post.id}}">
+                <span class="picture"></span>
+                <input class="fill comment-input" type="text" placeholder="Say something"/>
+              </form>
+          </main>
+
+      </div>
+  </body>
+</html>

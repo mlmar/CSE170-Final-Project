@@ -5,6 +5,10 @@
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet"/>
+    <script>
+      var url = "{{id}}";
+      var groupID = "{{group.id}}";
+    </script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/group.js"></script>
   </head>
@@ -21,12 +25,16 @@
             <div>
               <h3> Description: </h3> 
               <p> {{group.description}} </p>
+              <br/>
+              <button class="light dark-btn long member-btn" id="members-btn"> Add Members </button>
             </div>
 
             <div class="flex-col">
               <h3> Contact: </h3>
+              <a href="{{group.contact}}" class="dark-btn long"> Exteneral chat link </a>
+              <br/>
 
-              <div class="members-list">
+              <div class="current-members-list">
                 {{#each members}}
                   <div class="item">
                     <span class="picture"></span>
@@ -40,14 +48,24 @@
             <div class="popup leave">
               <div>
                 <label class="prompt"> Leave this group? </label>
-                <span> <button class="round-btn no"> No </button> <button class="round-btn yes" id={{group.id}}> Yes </button> </span>
+                <span> <button class="dark-btn no"> No </button> <button class="dark-btn yes" id={{group.id}}> Yes </button> </span>
               </div>
+            </div>
+
+            <div class="members-select flex-col">
+              <button class="cancel clear-btn"></button>
+              <input autocomplete="off" type="text" placeholder="Search name" name="search" id="search"/>
+              <form class="members-form flex-col fill">
+                <div class="members-list flex-col fill">
+                </div>
+                <input class="dark-btn light" type="submit" value="Add"/>
+              </form>
             </div>
 
             <div class="popup okay">
               <div>
                 <label class="prompt"> You have left this group. </label>
-                <span> <a class="round-btn" href="../groups"> Ok </a> </span>
+                <span> <a class="dark-btn" href="../groups"> Ok </a> </span>
               </div>
             </div>
 
