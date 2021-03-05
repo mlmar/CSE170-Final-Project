@@ -34,7 +34,7 @@ function handleSubmit(e) {
     url : url,
     name : $("#name").val(),
     description : $("#description").val(),
-    contact : $("#contact").val(),
+    contact : $("#contact").val().includes("https://") ? $("#contact").val() : "https://" + $("#contact").val(),
     addedMembers : addedMembers
   }
 
