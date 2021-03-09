@@ -33,5 +33,6 @@ exports.leave = function(req, res) {
   var id = req.body.id;
   var user = req.session.username;
   classes.joined[user] = classes.joined[user].filter(c => c !== classes.classes[id].url);
+  classes.classes[id].members = classes.classes[id].members.filter(u => u !== user); 
   console.log(classes.joined[user]);
 }

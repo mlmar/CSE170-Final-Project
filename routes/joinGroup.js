@@ -25,4 +25,5 @@ exports.join = function(req, res) {
   var groupID = req.body.id;
   groups.example[groupID].members.push(user);
   groups.joined[user].push(groupID);
+  res.send({ joined : true });
 }
