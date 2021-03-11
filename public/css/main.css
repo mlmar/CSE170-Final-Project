@@ -995,7 +995,7 @@ input[type=submit] {
   z-index: 3;
 }
 
-.members-select,
+.members-select .hidden,
 .joinClass .hidden {
   visibility: hidden;
   position: fixed;

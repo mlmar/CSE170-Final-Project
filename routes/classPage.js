@@ -133,5 +133,5 @@ function getMembers(id, user) {
     }
   });
 
-  return userIDS;
+  return userIDS.sort((a,b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 }
