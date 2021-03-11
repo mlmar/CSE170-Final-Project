@@ -417,6 +417,7 @@ input[type=submit] {
 
 .profile main > span > *:first-child {
   flex-basis: 20%;
+  justify-content: center;
 }
 
 .profile main > span > *:nth-child(2) {
@@ -427,6 +428,7 @@ input[type=submit] {
   font-weight: bold;
   font-size: 1.6rem;
   align-items: center;
+  padding-left: 2rem;
 }
 
 .profile .name {
@@ -437,6 +439,7 @@ input[type=submit] {
 .profile .picture {
   height: 4rem;
   width: 4rem;
+  margin: 0;
 }
 
 .profile .major-btn,
