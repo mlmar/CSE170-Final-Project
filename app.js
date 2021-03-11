@@ -42,6 +42,7 @@ app.get('/createAccount', createAccount.view); // send login info here
 app.post('/checkUser', createAccount.checkUsername) // check if username taken
 app.post('/signup', createAccount.signup); // send login info here
 app.get('/profile', profile.view); // send login info here
+app.post('/updateUser', profile.update); // update user info
 
 app.get('/home', home.view); // redirected here after logging in
 app.get('/join/class', joinClass.view) // shows when user presses join

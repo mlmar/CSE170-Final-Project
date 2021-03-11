@@ -79,13 +79,11 @@ function handleAddMembers(e) {
     addedMembers.push(val);
     var name = $(`#${val}-label`).text();
 
-      $(".current-members-list").append(`
-        <span class="flex item">
-          <div class="item">
-            <span class="picture"></span>
-            <label class="name"> ${name} </label>
-          </div>
-        </span>
+      $("#added-members").append(`
+        <div class="flex item">
+          <span class="picture"></span>
+          <label class="name"> ${name} </label>
+        </div>
       `)
   })
 

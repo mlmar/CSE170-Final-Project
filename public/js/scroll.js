@@ -1,12 +1,12 @@
 var height = 0;
 
 $(document).ready(function() {
-  adjust();
+  setTimeout(adjust, 10);
   $("main").on("scroll", handleScroll);
 })
 
 function adjust() {
-  height = $(".header").outerHeight();
+  height = $(".header").outerHeight(true);
   $("main").css("padding-top", `${height}px`);
   console.log(height);
 }

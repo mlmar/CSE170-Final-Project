@@ -256,7 +256,7 @@ textarea:focus, input:focus{
   justify-content: center;
   background: var(--dark-blue);
   color: white;
-  height: 1.7rem;
+  height: 1.5rem;
   width: 97%;
   padding: .2rem 1rem;
   font-size: 1rem;
@@ -368,6 +368,7 @@ input[type=number] {
 
 input[type=submit] {
   -webkit-appearance: none;
+  margin: 1rem 0;
 }
 
 .dark-btn {
@@ -387,9 +388,10 @@ input[type=submit] {
   width: 100%;
 }
 
-.login > a {
+.login a {
   align-self: center;
   text-decoration: underline;
+  font-size: .9rem;
 }
 
 .login > .incorrect {
@@ -402,7 +404,7 @@ input[type=submit] {
 
 .profile main > span {
   display: flex;
-  margin-bottom: 1.5rem;
+  align-items: center;
 }
 
 .profile main > span > * {
@@ -410,12 +412,18 @@ input[type=submit] {
 }
 
 .profile main > span > *:first-child {
-  flex-basis: 20%;
+  flex-basis: 10%;
   justify-content: center;
+  margin-right: 1rem;
 }
 
 .profile main > span > *:nth-child(2) {
-  flex-basis: 80%;
+  flex-basis: 90%;
+}
+
+.profile main label {
+  display: flex;
+  align-items: center;
 }
 
 .profile .name label {
@@ -426,7 +434,6 @@ input[type=submit] {
 }
 
 .profile .name {
-  box-shadow: 0px 2px 2px -2px rgb(14, 14, 14);
   padding: 1rem 0;
 }
 
@@ -438,8 +445,16 @@ input[type=submit] {
 
 .profile .major-btn,
 .profile .school-btn {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.profile main > * {
+  margin: .5rem 0;
+}
+
+.year-label, .major-label {
+  font-size: .9rem;
 }
 
 
@@ -720,7 +735,7 @@ input[type=submit] {
   outline: none;
   color: black;
   background: none;
-  padding: 2rem;
+  padding: 1rem;
   font-size: 1rem;
   resize: none;
 }
@@ -920,7 +935,8 @@ input[type=submit] {
   flex-direction: column;
 }
 
-.group .current-members-list > *{
+.group .current-members-list > *,
+#added-members > * {
   display: flex;
   font-size: 1rem;
   align-items: center;
@@ -945,9 +961,11 @@ input[type=submit] {
 }
 
 .createGroup .group-form textarea,
-.createGroup input[type=text] {
-  border: black solid;;
+.createGroup input[type=text],
+.profile input[type=text] {
+  border: rgb(201, 201, 201) solid;;
   border-width: 1px;
+  resize: none;
 }
 
 .createGroup .group-form textarea {
@@ -996,7 +1014,8 @@ input[type=submit] {
 }
 
 .members-select .hidden,
-.joinClass .hidden {
+.joinClass .hidden,
+.profile .hidden {
   visibility: hidden;
   position: fixed;
   z-index: -2;
