@@ -20,10 +20,10 @@
 
           <main>
             {{#each members}}
-              <div class="member flex">
+              <a class="member flex" href="./member/{{username}}">
                 <span class="picture"></span>
                 <label> {{name}} </label>
-              </div>
+              </a>
             {{/each}}
           </main>
 

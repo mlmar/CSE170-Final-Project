@@ -20,7 +20,8 @@ exports.view = function(req, res) {
     posts: posts[c.title],
     user: req.session.username,
     displayName: req.session.name,
-    joined: joined
+    joined: joined,
+    description: c.description
   });
 }
 
@@ -86,6 +87,11 @@ exports.viewList = function(req, res) {
   });
 }
 
+exports.viewMember = function(req, res) {
+  var memberID = req.params.member;
+  res.render('member', users[memberID]);
+}
+
 // function to get members from a fetch request
 exports.members = function(req,res) {
   var id = req.params.id;
@@ -93,6 +99,7 @@ exports.members = function(req,res) {
   var members = getMembers(id, user);
   res.send({ members : members});
 }
+
 
 // function to get members from a post request, filtering out specified usernames
 exports.filterMembers = function(req,res) {

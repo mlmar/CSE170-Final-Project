@@ -61,6 +61,7 @@ app.get('/class/:id/groups/create', createGroup.view); // create a group page
 app.post('/createGroup', createGroup.create); // create a group
 app.get('/class/:id/groups/join', joinGroup.view); // list of gorups to join
 app.get('/class/:id/members', classPage.members);
+app.get('/class/:id/member/:member', classPage.viewMember);
 app.post('/class/:id/filterMembers', classPage.filterMembers);
 app.post('/updateMembers', group.updateMembers);
 
