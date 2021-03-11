@@ -23,7 +23,7 @@ function handleJoinPopup() {
 
 function handleJoinYes() {
   $.post("/joinClass", { id });
-  $(".join-btn").replaceWith(`<span class="leave-btn"> Leave </span>`);
+  $(".join-btn").replaceWith(`<span class="leave-btn light"> Leave </span>`);
   $(".leave-btn").click(handleLeavePopup);
 
   handleJoinPopup();
@@ -36,7 +36,7 @@ function handleLeavePopup() {
 
 function handleLeaveYes() {
   $.post("/leaveClass", { id });
-  $(".leave-btn").replaceWith(`<span class="join-btn"> Join </span>`);
+  $(".leave-btn").replaceWith(`<span class="join-btn light"> Join </span>`);
   $(".join-btn").click(handleJoinPopup);
 
   handleLeavePopup();

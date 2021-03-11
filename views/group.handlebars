@@ -10,6 +10,7 @@
       var groupID = "{{group.id}}";
     </script>
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/scroll.js"></script>
     <script src="/js/group.js"></script>
   </head>
 
@@ -17,8 +18,14 @@
       <div class="group page">
 
           <div class="header">
-            <span> <a class="back-btn icon" href="../groups"> </a> </span>
-            <span> <label class="title"> {{group.name}} </label> <span class="leave-btn"> Leave </span> </span>
+            <div class="bar">
+              <span> <a class="back-btn icon" href="../groups"> </a> </span>
+              <label class="title"> {{group.name}} </label> 
+              <span></span>
+            </div>
+            <div class="description">
+              <span class="leave-btn light"> Leave </span>
+            </div>
           </div>
 
           <main>

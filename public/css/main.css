@@ -47,10 +47,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
-  transition: 
-    padding .5s ease,
-    margin .5s ease;
 }
 
 html, body {
@@ -96,6 +92,7 @@ textarea:focus, input:focus{
 
 .back-btn {
   background-image: url("icons/navigate_before-24px.svg");
+  background-size: 70%;
 }
 
 .home-btn {
@@ -194,38 +191,62 @@ textarea:focus, input:focus{
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 10rem;
   background: white;
-  padding: 1rem;
-  transition: height .2s ease-out;
+  padding: 2rem 1rem .5rem;
+  transition: padding .2s ease-out;
   z-index: 2;
 }
 
-.header > *:first-child,
-.header > *:nth-child(2) {
+.header > .bar {
   display: flex;
-  flex-basis: 50%;
-  width: 100%;
-  align-items: flex-end;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.header > .bar.collapse {
   justify-content: space-between;
 }
 
-.header > .right {
-  display: flex;
-  flex-direction: row-reverse;
+
+
+.header > .bar:not(.collapse) > *:nth-child(1),
+.header > .bar:not(.collapse) > *:nth-child(3) {
+  flex-basis: 20%;
 }
 
+.header > .bar:not(.collapse) > *:nth-child(2) {
+  flex-basis: 60%;
+}
+
+
 .header .back-btn {
-  background-position-x: -15px;
   width: 2.7rem;
   height: 2.7rem;
 }
 
 .header .title {
   font-weight: bold; 
-  font-size: 2.2rem;
-  transition: font-size .2s ease-out;
+  font-size: 1.5rem;
   color: var(--dark-blue);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.header .big {
+  font-size: 2rem;
+}
+
+.header > .bar.collapse .title {
+  text-align: left;
+}
+
+.header > .description {
+  display: flex;
+  flex-direction: column;
+  max-height: 15rem;
+  transition: max-height .15s ease-out;
+  overflow: hidden;
+
 }
 
 .header .join-btn,
@@ -235,38 +256,22 @@ textarea:focus, input:focus{
   justify-content: center;
   background: var(--dark-blue);
   color: white;
-  height: 2rem;
+  height: 1.7rem;
+  width: 97%;
   padding: .2rem 1rem;
   font-size: 1rem;
   border-radius: 2rem;
   align-items: center;
+  margin: 1rem 0;
+  align-self: center;
 }
 
 .header.shrink {
-  flex-direction: row;
-  height: 5rem;
-  align-items: center;
+  padding: 0 1rem;
 }
 
-.header.shrink > *:first-child {
-  flex-basis: 0;
-  flex-shrink: 100%;
-}
-
-.header.shrink > *:nth-child(2) {
-  flex-basis: 85%;
-}
-
-.header.reverse.shrink {
-  flex-direction: row-reverse;
-}
-
-.header.reverse.shrink > *:nth-child(2) {
-  flex: 1 1;
-}
-
-.header.shrink .title {
-  font-size: 1.5rem;
+.header.shrink .description {
+  max-height: 0rem;
 }
 
 /* primary content */
@@ -278,12 +283,6 @@ main {
   overflow: auto;
   padding: 0 1rem;
 }
-
-main {
-  padding-top: 10rem !important;
-}
-
-
 
 .page {
   position: relative;         /* not necessary unless you want floating elements (e.g post button) */
@@ -400,11 +399,6 @@ input[type=submit] {
 
 
 /************** profile layouts **************/
-
-.profile main,
-.thread main {
-  padding-top: 5rem !important;
-}
 
 .profile main > span {
   display: flex;
@@ -574,6 +568,7 @@ input[type=submit] {
 .classPage .posts-list {
   flex-direction: column-reverse;
   justify-content: flex-end;
+  padding-bottom: 25%;
 }
 
 .classPage .posts-list > .item,

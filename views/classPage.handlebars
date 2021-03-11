@@ -17,16 +17,19 @@
       <div class="classPage page">
 
           <div class="header">
-            <span> 
-              <a class="back-btn icon" href="/home"> </a> </span>
-            <span> 
-              <label class="title" id={{url}}> {{title}} </label> 
+            <div class="bar">
+              <span> <a class="back-btn icon" href="/home"> </a> </span>
+              <label class="title big" id={{url}}> {{title}} </label>
+              <span></span> 
+            </div>
+            <div class="description"> 
+              <p> {{description}} </p>
               {{#if joined}}
-                <span class="leave-btn"> Leave </span>
+                <span class="leave-btn light"> Leave </span>
               {{else}}
-                <span class="join-btn"> Join </span> 
+                <span class="join-btn light"> Join </span> 
               {{/if}}
-            </span>
+            </div>
           </div>
 
           <main>
