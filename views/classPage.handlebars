@@ -18,7 +18,12 @@
 
           <div class="header">
             <div class="bar">
-              <span> <a class="back-btn icon" href="/home"> </a> </span>
+              {{#if joined}}
+                <span> <a class="back-btn icon" href="/home"> </a> </span>
+              {{else}}
+                <span> <a class="back-btn icon" href="/join/class"> </a> </span>
+              {{/if}}
+
               <label class="title big" id={{url}}> {{title}} </label>
               <span></span> 
             </div>

@@ -21,14 +21,12 @@
       </div>
 
       <main>
-        <form class="flex" method="get" action="/search">
-          <input type="text" placeholder="Search for a class" name="term"/>
-        </form>
+        <input type="text" placeholder="Search for a class" id="search"/>
+
         <div class="class-list flex-col">
+          <label class="disclaimer"> Full class list under construction. More classes will be added in the future. </label>
           {{#each classes}}
-            <a class="item" href="/class/{{url}}"> 
-              <label> {{title}} </label>
-            </a>
+            <a class="item" href="/class/{{url}}"> {{title}} </a>
           {{/each}}
         </div>
       </main>

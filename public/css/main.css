@@ -243,7 +243,7 @@ textarea:focus, input:focus{
 .header > .description {
   display: flex;
   flex-direction: column;
-  max-height: 15rem;
+  max-height: 30rem;
   transition: max-height .15s ease-out;
   overflow: hidden;
 
@@ -995,7 +995,8 @@ input[type=submit] {
   z-index: 3;
 }
 
-.members-select .hidden {
+.members-select,
+.joinClass .hidden {
   visibility: hidden;
   position: fixed;
   z-index: -2;
