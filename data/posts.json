@@ -34,5 +34,45 @@
       ],
       "id": "3"
     }
+  ],
+  "COGS 100": [
+    {
+      "name": "Joseph",
+      "text": "Cyborgs are cool?",
+      "comments": [
+        { "name" : "Kate", "text": "Kinda" }
+      ],
+      "id": "0"
+    }
+  ],
+  "COGS 108": [
+    {
+      "name": "Kevin",
+      "text": "How many datasets do we need?",
+      "comments": [
+        { "name" : "Lucas", "text": "2" }
+      ],
+      "id": "0"
+    }
+  ],
+  "Math 18": [
+    {
+      "name": "Jacob",
+      "text": "Do we need to know the orthogonal stuff",
+      "comments": [
+        { "name" : "John", "text": "next midterm" }
+      ],
+      "id": "0"
+    }
+  ],
+  "CSE 170": [
+    {
+      "name": "Kevin",
+      "text": "How functional does our app have to be",
+      "comments": [
+        { "name" : "Kate", "text": "Fully useable, deployed into the real world and lucrative" }
+      ],
+      "id": "0"
+    }
   ]
 }

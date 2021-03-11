@@ -1,15 +1,15 @@
 {
   "joined": {
     "demo": ["0"],
-    "girl1": ["0"],
-    "girl2": ["0"],
-    "girl3": ["0"],
-    "girl4": ["0"],
-    "jofa": ["0"],
-    "kevwu": ["0"],
-    "jacky": ["0"],
-    "jacob125": ["0"],
-    "john25": ["0"]
+    "girl1": ["0","1","5"],
+    "girl2": ["0","1"],
+    "girl3": ["0","2"],
+    "girl4": ["0","4"],
+    "jofa": ["0","1"],
+    "kevwu": ["0","2","5"],
+    "jacky": ["0","2","5"],
+    "jacob125": ["0","3"],
+    "john25": ["0","3","4"]
   },
   "classes": [
     {
@@ -23,35 +23,35 @@
       "number": "100",
       "title": "COGS 100",
       "url": "1",
-      "members": [],
+      "members": ["girl1","girl2","jofa"],
       "description" : "Covers the theories of situated, distributed, enactive, and embodied cognition. Explains how cyborgs are a natural consequence of our current understanding of embodied minds embedded in culturally shaped niches; how mental systems can be distributed over other people and things."
     },
     {
       "number": "108",
       "title": "COGS 108",
       "url": "2",
-      "members": [],
+      "members": ["kevwu", "jacky, girl3"],
       "description": "Data science is multidisciplinary, covering computer science, statistics, cognitive science and psychology, data visualization, artificial intelligence and machine learning, among others. This course teaches critical skills needed to pursue a data science career using hands-on programming and experimental challenges."
     },
     {
       "number": "18",
       "title": "Math 18",
       "url": "3",
-      "members": [],
+      "members": ["jacob125", "john25"],
       "description": "Matrix algebra, Gaussian elimination, determinants. Linear and affine subspaces, bases of Euclidean spaces. Eigenvalues and eigenvectors, quadratic forms, orthogonal matrices, diagonalization of symmetric matrices. Applications. Computing symbolic and graphical solutions using MATLAB. Students may not receive credit for both MATH 18 and 31AH."
     },
     {
       "number": "20a",
       "title": "Math 20a",
       "url": "4",
-      "members": [],
+      "members": ["girl4", "john25"],
       "description": "Foundations of differential and integral calculus of one variable. Functions, graphs, continuity, limits, derivative, tangent line. Applications with algebraic, exponential, logarithmic, and trigonometric functions. Introduction to the integral."
     },
     {
       "number": "170",
       "title": "CSE 170",
       "url": "5",
-      "members": [],
+      "members": ["kevwu","girl1","jacky"],
       "description": "Introduces fundamental methods and principles for designing, implementing, and evaluating user interfaces. Topics: user-centered design, rapid prototyping, experimentation, direct manipulation, cognitive principles, visual design, social software, software tools. Learn by doing: work with a team on a quarter-long design project. Recommended preparation: basic familiarity with HTML. Students may not receive credit for both COGS 120 and CSE 170."
     }
   ]
