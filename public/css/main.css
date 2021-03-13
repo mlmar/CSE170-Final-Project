@@ -595,11 +595,6 @@ input[type=submit] {
   font-size: .8rem;
 }
 
-.classPage .posts-list > .item,
-.classPage .posts-list > .item > *:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
 .classPage .posts-list > .item > .name,
 .panel > .name {
   display: flex;

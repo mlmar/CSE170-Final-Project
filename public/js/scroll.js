@@ -6,14 +6,14 @@ $(document).ready(function() {
 })
 
 function adjust() {
-  height = $(".header").outerHeight(true) + 16;
+  height = $(".header").outerHeight(true);
   $("main").css("padding-top", `${height}px`);
   console.log(height);
 }
 
 function handleScroll() {
   var scrollPosition = $(this).scrollTop();
-  if(scrollPosition > height / 6) {
+  if(scrollPosition > height / 4) {
     $(".header").addClass("shrink");
   } else {
     $(".header").removeClass("shrink");
