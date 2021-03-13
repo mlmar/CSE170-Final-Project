@@ -972,6 +972,7 @@ input[type=submit] {
   border-radius: .5rem;
   height: 10rem;
   margin-bottom: 1rem;
+  color: var(--dark-blue);
 }
 
 .createGroup .group-form > div {
