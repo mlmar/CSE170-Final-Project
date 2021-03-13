@@ -1,7 +1,7 @@
 var height = 0;
 
 $(document).ready(function() {
-  setTimeout(adjust, 10);
+  setTimeout(adjust, 20);
   $("main").on("scroll", handleScroll);
 })
 
@@ -13,7 +13,7 @@ function adjust() {
 
 function handleScroll() {
   var scrollPosition = $(this).scrollTop();
-  if(scrollPosition > height / 2) {
+  if(scrollPosition > height / 3) {
     $(".header").addClass("shrink");
   } else {
     $(".header").removeClass("shrink");
