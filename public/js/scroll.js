@@ -8,13 +8,12 @@ $(document).ready(function() {
 function adjust() {
   height = $(".header").outerHeight(true);
   $("main").css("padding-top", `${height}px`);
-  $("main").css("padding-bottom", `${height}px`);
   console.log(height);
 }
 
 function handleScroll() {
   var scrollPosition = $(this).scrollTop();
-  if(scrollPosition > height / 3) {
+  if(scrollPosition > height / 6) {
     $(".header").addClass("shrink");
   } else {
     $(".header").removeClass("shrink");
