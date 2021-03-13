@@ -1,7 +1,7 @@
 var height = 0;
 
 $(document).ready(function() {
-  setTimeout(adjust, 20);
+  setTimeout(adjust, 40);
   $("main").on("scroll", handleScroll);
 })
 
