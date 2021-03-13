@@ -6,7 +6,7 @@ $(document).ready(function() {
 })
 
 function adjust() {
-  height = $(".header").outerHeight(true);
+  height = $(".header").outerHeight(true) + 16;
   $("main").css("padding-top", `${height}px`);
   console.log(height);
 }
