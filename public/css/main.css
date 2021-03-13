@@ -83,7 +83,7 @@ textarea:focus, input:focus{
 
 /* i usually just apply these styles to <span> tags to avoid default button styles since im just overlaying an image */
 
-.back-btn, .home-btn, .group-btn, .up-btn, .clear-btn, .class-btn, .comment-btn, .post-btn, .profile-btn, .school-btn, .major-btn {
+.back-btn, .home-btn, .group-btn, .up-btn, .clear-btn, .class-btn, .comment-btn, .post-btn, .profile-btn, .school-btn, .major-btn, .phone-btn {
   display: flex;
   background-repeat: no-repeat;
   background-size: contain;
@@ -113,6 +113,10 @@ textarea:focus, input:focus{
 
 .up-btn {
   background-image: url("icons/north-24px.svg");
+}
+
+.phone-btn {
+  background-image: url("icons/smartphone-24px.svg");
 }
 
 .comment-btn {
@@ -444,7 +448,8 @@ input[type=submit] {
 }
 
 .profile .major-btn,
-.profile .school-btn {
+.profile .school-btn,
+.profile .phone-btn {
   width: 1.5rem;
   height: 1.5rem;
 }
